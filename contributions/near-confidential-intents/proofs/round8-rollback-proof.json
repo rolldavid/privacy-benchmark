@@ -1,0 +1,262 @@
+{
+  "blockHeight": 219099811,
+  "blockHash": "HPDLGLmwMeBaxU6jh8txCDTBAPvoFmdQ6WmXo4VeQ7ym",
+  "scope": "Mandatory public backing component; private FAR governance is not inferred",
+  "queriedMethods": ["version", "contract_source_metadata", "up_get_delay_status", "acl_get_grantees", "get_releases", "view_access_key_list"],
+  "controllerVersion": "0.3.3",
+  "controllerMetadata": {
+    "version": "0.3.3",
+    "link": "https://github.com/aurora-is-near/aurora-controller-factory",
+    "standards": [
+      {
+        "standard": "nep330",
+        "version": "1.3.0"
+      }
+    ],
+    "build_info": null
+  },
+  "controllerDelayStatus": {
+    "staging_duration": null,
+    "staging_timestamp": 1749463409227021144,
+    "new_staging_duration": null,
+    "new_staging_duration_timestamp": null
+  },
+  "downgradeRoleHolders": [
+    "8e69c33b572dad1f2da6f744c834705e651d3784af2471b58949f2fefd5b55d3",
+    "ac39364aae9f15438b575f677768c2cf4a7cc74b7dcd198980e8618f003ff538"
+  ],
+  "updaterAccessKeys": {
+    "block_hash": "HPDLGLmwMeBaxU6jh8txCDTBAPvoFmdQ6WmXo4VeQ7ym",
+    "block_height": 219099811,
+    "keys": [
+      {
+        "access_key": {
+          "nonce": 144155787000139,
+          "permission": "FullAccess"
+        },
+        "public_key": "ed25519:5AtW3Lye8BnhUeRojPT31tXutDjdPSeJSf3korfmriHz"
+      },
+      {
+        "access_key": {
+          "nonce": 212039009000007,
+          "permission": "FullAccess"
+        },
+        "public_key": "ed25519:5K2gq2PK7mbdbj8K8ya1zGcPZHQeDbjMy4772m4FzWfG"
+      },
+      {
+        "access_key": {
+          "nonce": 169698470000000,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "250000000000000000000000",
+              "method_names": [],
+              "receiver_id": "social.near"
+            }
+          }
+        },
+        "public_key": "ed25519:F2rA3Zih6Kyb4rx4rpX1FMJ1vTq9wytmbvSn6GevFHQf"
+      },
+      {
+        "access_key": {
+          "nonce": 132523044000000,
+          "permission": {
+            "FunctionCall": {
+              "allowance": "250000000000000000000000",
+              "method_names": [],
+              "receiver_id": "social.near"
+            }
+          }
+        },
+        "public_key": "ed25519:HmXJHMyR2etk3S9zPbJcMSZGH8XYwJCbGwWEN6E1bHQi"
+      }
+    ]
+  },
+  "releases": [
+    {
+      "hash": "84d8a418ca5f4abc6ed57fd638a633d13bff8dc278f82f97c7ffc4d625ba859f",
+      "version": "0.1.1",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "8c52948f4874ef2f6091c05e1d84022abbd3510206a6dfda3aeb02a6f8538a61",
+      "version": "0.1.2",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "14d60672c040f80d251f39206d9c52f76a0ad5dbaece510c00469a5f2c4eb861",
+      "version": "0.2.0",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "ece27e183ad08f4989262262eccbaa3b57e5d171d7d20b714f7a58264d39ea22",
+      "version": "0.2.1",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "97a1b83fc25f03d9d0876f19432c1047409ca0ee4b240675a1fad6104bd780e1",
+      "version": "0.2.2",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "0ad51504303c501136f3828e15e7e398e3740e32b01c8004fd719abf195ea07b",
+      "version": "0.2.3",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "f559253faffa10cb51f83656595c5aa33f46797a3418d0c1927fa2f493b74f2b",
+      "version": "0.2.5",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "041f9960bacc77efe391338386480703b5233538102ef8221f16983a945fa7fa",
+      "version": "0.2.6",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "51dfd5569d4be7bc8a24cb01a264f32bc35e6b763203bdadec5741513d4d7556",
+      "version": "0.2.7",
+      "is_blob_exist": true,
+      "downgrade_hash": "f559253faffa10cb51f83656595c5aa33f46797a3418d0c1927fa2f493b74f2b",
+      "description": null
+    },
+    {
+      "hash": "8fc7c84c2bb67dc846f948349da0a6e29cd7ed4dbb1befc8d2aa88dcd7bfdc3e",
+      "version": "0.2.8",
+      "is_blob_exist": true,
+      "downgrade_hash": "f559253faffa10cb51f83656595c5aa33f46797a3418d0c1927fa2f493b74f2b",
+      "description": null
+    },
+    {
+      "hash": "425ac2b590f6b33f94dd3d80dbf96e9a261e50b693df3053f022307f0cc0b1a3",
+      "version": "0.2.9",
+      "is_blob_exist": true,
+      "downgrade_hash": "8fc7c84c2bb67dc846f948349da0a6e29cd7ed4dbb1befc8d2aa88dcd7bfdc3e",
+      "description": null
+    },
+    {
+      "hash": "b76ee5e4d64646586bee19c346b269a18c1abdf5ac15990614d28eaa5ead8cec",
+      "version": "0.2.10",
+      "is_blob_exist": true,
+      "downgrade_hash": "425ac2b590f6b33f94dd3d80dbf96e9a261e50b693df3053f022307f0cc0b1a3",
+      "description": null
+    },
+    {
+      "hash": "9fc003397cee249c06496eb5e322768af7db7210a781fed1bfa30ea46d4abe69",
+      "version": "0.3.0",
+      "is_blob_exist": true,
+      "downgrade_hash": null,
+      "description": null
+    },
+    {
+      "hash": "f5dcfc81d0ed0255e7727fc637c007ea5d5ceeae72dc06b3aff37988dba335b3",
+      "version": "0.4.0",
+      "is_blob_exist": true,
+      "downgrade_hash": "9fc003397cee249c06496eb5e322768af7db7210a781fed1bfa30ea46d4abe69",
+      "description": null
+    },
+    {
+      "hash": "b9f40728e4d20e241fd1d68b720a5a7e4900bca764b17e341ead5a188a71f8bc",
+      "version": "0.4.1",
+      "is_blob_exist": true,
+      "downgrade_hash": "9fc003397cee249c06496eb5e322768af7db7210a781fed1bfa30ea46d4abe69",
+      "description": null
+    },
+    {
+      "hash": "f4b908b631562d62c133cc58b0a053dab41d6e243990c54694ac42264679f4ea",
+      "version": "0.4.2",
+      "is_blob_exist": true,
+      "downgrade_hash": "b9f40728e4d20e241fd1d68b720a5a7e4900bca764b17e341ead5a188a71f8bc",
+      "description": null
+    },
+    {
+      "hash": "e1f178633eb31bcd00491edeb467f8177b05837ee87aa564b700c5232651707b",
+      "version": "0.4.3",
+      "is_blob_exist": true,
+      "downgrade_hash": "f4b908b631562d62c133cc58b0a053dab41d6e243990c54694ac42264679f4ea",
+      "description": null
+    },
+    {
+      "hash": "c55fbf3ee278b54c499c0084e42b57fc802e9887f125d2e4eb43efd837d9310e",
+      "version": "0.4.4",
+      "is_blob_exist": true,
+      "downgrade_hash": "e1f178633eb31bcd00491edeb467f8177b05837ee87aa564b700c5232651707b",
+      "description": null
+    },
+    {
+      "hash": "a1afab98916d9f213746544dcf8e4e6bdb22c0be6bc5dfbd8ea8814c9922b547",
+      "version": "0.4.5",
+      "is_blob_exist": true,
+      "downgrade_hash": "c55fbf3ee278b54c499c0084e42b57fc802e9887f125d2e4eb43efd837d9310e",
+      "description": null
+    }
+  ],
+  "currentVerifier": {
+    "hash": "a1afab98916d9f213746544dcf8e4e6bdb22c0be6bc5dfbd8ea8814c9922b547",
+    "version": "0.4.5",
+    "deployment_time": 1730794858000000000,
+    "upgrade_times": {
+      "1730896107734667690": "0.1.1",
+      "1732300645062125214": "0.1.2",
+      "1733833880742370863": "0.2.0",
+      "1737536900001348197": "0.2.1",
+      "1738597101766507223": "0.2.2",
+      "1739913880609137110": "0.2.2",
+      "1739916393467730096": "0.2.3",
+      "1748290644282344785": "0.2.5",
+      "1749464233784481012": "0.2.6",
+      "1749500517952982829": "0.2.7",
+      "1749583496059523536": "0.2.5",
+      "1749585532020689557": "0.2.8",
+      "1750859371498697674": "0.2.9",
+      "1757578580034045513": "0.2.10",
+      "1761725363806651961": "0.3.0",
+      "1764759483074098641": "0.4.0",
+      "1764796368361722610": "0.4.1",
+      "1768500720176125593": "0.4.2",
+      "1790973102189626775": "0.4.4",
+      "1791402797418572403": "0.4.5"
+    },
+    "init_args": "{\"config\":{\"wnear_id\":\"wrap.near\",\"fees\":{\"fee\":0,\"fee_collector\":\"defuse-ops.near\"},\"roles\":{\"super_admins\":[\"defuse-ops.near\"],\"admins\":{\"DAO\":[\"defuse-ops.near\"]},\"grantees\":{\"DAO\":[\"defuse-ops.near\"]}}}}"
+  },
+  "controllerSourceTag": {
+    "repository": "aurora-is-near/aurora-controller-factory",
+    "tag": "0.3.3",
+    "commit": "aa13a712dd72dc3b518af27f9dfe526175daff9e",
+    "archiveSha256": "a313881ccb30f50abc5100e76de0cfeff51414bb18602f4640cd5097f3ce03d7"
+  },
+  "controllerBinarySha256": "471f43810281ff49dad0e9168841b3821dd75c289bef8948687d93dd6da00f8c",
+  "publishedReleaseBinaryMatches": true,
+  "sourceTagRebuiltLocally": false,
+  "downgradeExecuted": false,
+  "verifierUpgradeAuthority": {
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "benchmark-public-read",
+      "method": "query",
+      "params": {
+        "request_type": "call_function",
+        "block_id": "HPDLGLmwMeBaxU6jh8txCDTBAPvoFmdQ6WmXo4VeQ7ym",
+        "account_id": "intents.near",
+        "method_name": "acl_get_grantees",
+        "args_base64": "eyJyb2xlIjogIlVwZ3JhZGVyIiwgInNraXAiOiAwLCAibGltaXQiOiAzMH0="
+      }
+    },
+    "grantees": ["ctl-intents.near"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "file": "final-dao-query.json.gz",
+  "queryAccount": "intents.sputnik-dao.near",
+  "method": "get_proposals",
+  "blockHeight": 219099811,
+  "blockHash": "HPDLGLmwMeBaxU6jh8txCDTBAPvoFmdQ6WmXo4VeQ7ym",
+  "proposalCount": 105,
+  "matchesEarlierDecodedArchive": true,
+  "uncompressedSha256": "40a1f4d1848ae0494c463218b66baa25a5c60b91e25a0ec86f51263bdc24dcec",
+  "compressedSha256": "34d6f0e3e6a8293b415d4996503a654a0759a3419a31921d45d244bb55ecf198",
+  "retrievedAt": "2026-10-09T04:44:18.562347+00:00"
+}

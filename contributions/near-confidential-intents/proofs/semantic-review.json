@@ -1,0 +1,359 @@
+{
+  "asOf": "2026-10-08",
+  "reviewDate": "2026-10-09",
+  "scope": "Read-only review of exactly three criteria; archived first-party sources and original published peer snapshots. No network queries, rubric changes or assessment changes.",
+  "methodology": [
+    "SCOPE_RULES1: live deployed selected version; no roadmap credit.",
+    "SCOPE_RULES3: supported reference options count; criterion-specific default only when asked.",
+    "SCOPE_RULES4: settlement/data evaluated on selected host FAR.",
+    "SCOPE_RULES5: unestablished answers unknown; no favorable guess or inferred absence.",
+    "CONFLICT_RULES: onchain > pinned code > postrelease independent analysis > applicable docs > third party > other-version context > marketing. Literal rubric definition resolves interpretation."
+  ],
+  "checks": [
+    {
+      "criterionId": "decentralization.settlement.data",
+      "question": "Where is the data needed to reconstruct state published?",
+      "guidance": "Onchain or L1 blobs are the top option.",
+      "option": "onchain: Onchain or L1 DA",
+      "near": {
+        "optionId": "onchain",
+        "confidence": "medium",
+        "rationale": "Apply SCOPE_RULES4 to the selected host FAR itself. Current architecture places the canonical intents.far ledger and settlement on the private NEAR fork; the dated architecture article explicitly describes balances/full history as encrypted onchain. This supports the rubric location option Onchain or L1 DA. The rubric does not add a permissionless/public-RPC requirement. Do not substitute public NEAR backing or infer public reconstruction, guaranteed archival retention, recovery without operators, encryption algorithms or current private image correspondence. These remain unverified and operator-dependent custody is scored separately. The closed-host location interpretation is explicitly recorded for author review.",
+        "evidence": [
+          {
+            "sourceId": "architecture",
+            "quote": "The swap settles entirely on FAR via a `token_diff` intent, invisible to public indexers.",
+            "stance": "supports",
+            "sourceClass": "official_docs",
+            "url": "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "round8-encrypted-chain",
+            "quote": "Your confidential balance and full transaction history are encrypted onchain using your wallet's private key.",
+            "stance": "supports",
+            "sourceClass": "marketing",
+            "url": "https://cdn.builder.io/api/v3/content/blog-post?apiKey=70130eda95b54795a38fe0f6e694359f&userAttributes.urlPath=%2Fblog%2Fhow-confidential-intents-works&limit=1",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "architecture",
+            "quote": "FAR is a permissioned instance of the NEAR protocol operated by a small validator set with no public networking.",
+            "stance": "context",
+            "sourceClass": "official_docs",
+            "url": "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "architecture",
+            "quote": "Balances and swap details on FAR are not visible to the public — the RPC is private and reachable only through authenticated channels.",
+            "stance": "context",
+            "sourceClass": "official_docs",
+            "url": "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+            "exactLocalQuoteMatch": true
+          }
+        ]
+      },
+      "peers": [
+        {
+          "project": "miden",
+          "optionId": "onchain",
+          "confidence": "medium",
+          "rationale": "Committed blocks are published on Miden's own chain: the public BlockSubscription replays all historical blocks, anyone can run a full node to replicate them, and validators keep backups. Private note and account contents stay off-chain by design, with only their commitments stored publicly.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "`BlockSubscription` streams committed blocks starting from `block_from`, inclusive. The server first replays historical\nblocks, then continues streaming live blocks as they are committed.",
+              "sourceClass": "official_docs",
+              "url": "https://github.com/0xMiden/node/blob/v0.16.1/docs/external/src/rpc/subscriptions.md"
+            },
+            {
+              "quote": "Full nodes run `miden-node full`. They replicate the chain from an upstream RPC source and serve the public RPC API from\nlocal state.",
+              "sourceClass": "official_docs",
+              "url": "https://github.com/0xMiden/node/blob/v0.16.1/docs/external/src/network-operator/overview.md"
+            }
+          ]
+        },
+        {
+          "project": "tempo",
+          "optionId": "operator",
+          "confidence": "medium",
+          "rationale": "Zone docs say the private ledger isn't published and that Zone state can't be rebuilt without the sequencer, so only the operator holds the data. Tempo L1 blocks are fully published and can be re-executed, but that covers only L1 state.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "| Sequencer for data | Reconstructing the state of the Tempo Zone without the sequencer is impossible. |",
+              "sourceClass": "official_docs",
+              "url": "https://tempo.xyz/developers/docs/protocol/zones/architecture"
+            },
+            {
+              "quote": "Bridge activity and settlement commitments are public; the private ledger is not published.",
+              "sourceClass": "official_docs",
+              "url": "https://tempo.xyz/developers/docs/protocol/zones/architecture"
+            }
+          ]
+        },
+        {
+          "project": "zksync-prividium",
+          "optionId": "operator",
+          "confidence": "high",
+          "rationale": "The live DA pair uses commitment scheme 1, which the deployed contract source defines as EMPTY_NO_DA (\"No DA commitment, used by Validiums\"), and the pubdata pricing mode is Validium. The docs say all transaction data and state are stored off-chain in the operator's database.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "function getDAValidatorPair() view returns (address, address)\nargs: []\nresult: [\"0xaC0f6BF73d1609A3B8eB14250AABc5c866363012\",\"0x0000000000000000000000000000000000000001\"]",
+              "sourceClass": "code_onchain",
+              "url": "evm://1/0x3e14850bc5e34be2e02898c9dd9a53bf4dc20d72#a8c67fe354"
+            },
+            {
+              "quote": "/// @param EMPTY_NO_DA No DA commitment, used by Validiums.",
+              "sourceClass": "code_onchain",
+              "url": "https://repo.sourcify.dev/1/0x6EA4B2695c714D2D83c4b850cf0b4a7d93CD66Aa"
+            }
+          ]
+        },
+        {
+          "project": "canton-network",
+          "optionId": "operator",
+          "confidence": "medium",
+          "rationale": "There is no global state replication: each participant stores only its hosted parties' contracts, and SVs do not retain application data, so users 'can only rely on your own backups'. Sequencers keep messages for only about 30 days, and only DSO-shared Canton Coin data is held by the SVs.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "No global state replication means no global visibility.** Each participant node stores only the contracts where its hosted parties are stakeholders. There is no shared global state that could be queried or leaked.",
+              "sourceClass": "official_docs",
+              "url": "https://docs.canton.network/overview/reference/smart-contract-consensus"
+            },
+            {
+              "quote": "This means that if you have other applications installed, the Super Validators cannot help you recover data from those apps;\n\n      you can only rely on your own backups.",
+              "sourceClass": "official_docs",
+              "url": "https://docs.canton.network/global-synchronizer/deployment/validator-docker-compose"
+            }
+          ]
+        }
+      ],
+      "recommendation": "Сохранить onchain как предлагаемую классификацию в ручном черновике, явно вынести ограниченную доступность данных FAR на решение редактора.",
+      "reason": "SCOPE_RULES4 задаёт FAR как оцениваемую сеть. Архитектура описывает отдельный канонический ledger и консенсус FAR, статья помещает баланс и полную историю onchain. Рубрика не требует разрешённого всем RPC или восстановления без операторов. Peer Tempo/Prividium/Canton имеют положительное основание для иной топологии хранения, а не просто permissioned-доступ. У Miden onchain тоже не означает размещение открытого содержимого всех приватных объектов.",
+      "limits": [
+        "Не проверена полная конфигурация хранилища/архивов FAR.",
+        "Не доказана возможность стороннего пользователя получить данные и восстановить состояние.",
+        "Датированная статья является marketing; техническая документация подтверждает ledger/settlement, но не независимое обследование полного хранения."
+      ],
+      "editorialDecision": true,
+      "establishedMismatch": false
+    },
+    {
+      "criterionId": "coverage.identity.identity-proofs",
+      "question": "Can users prove attributes (membership, compliance, credentials) without revealing identity?",
+      "guidance": "Native means the protocol offers the primitive; via apps means developers can build it.",
+      "option": "apps: Possible via apps",
+      "near": {
+        "optionId": "apps",
+        "confidence": "medium",
+        "rationale": "The rubric explicitly defines via apps as developers can build it; a currently deployed anonymous credential app is not required. Applicable treasury documentation establishes approved smart contracts on near.com's private shard and states public-shard functionality is provided there. Public SDK 5.29.1, pinned in the matched current core Cargo.lock, supplies pairing verification suited to ZK proofs. This supports an application-level implementation as a documented capability inference, consistent with peer VM-capability reasoning. It does not establish a native anonymous-identity primitive, permissionless admission, a deployed credential app or an independently byte-verified private host. If the private host restricts these application operations, this classification needs revision.",
+        "evidence": [
+          {
+            "sourceId": "round7-business-treasuries",
+            "quote": "This makes private shards an ideal solution for confidential treasuries, as they provide all the security and functionality of a public shard, but with the added privacy of not exposing any financial data to the public.",
+            "stance": "supports",
+            "sourceClass": "official_docs",
+            "url": "https://docs.business.near.com/confidential-treasuries.md",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "round7-business-funding",
+            "quote": "Because [confidential treasuries](/confidential-treasuries) are deployed on [near.com](https://near.com/)'s private shard, they are effectively near.com accounts.",
+            "stance": "supports",
+            "sourceClass": "official_docs",
+            "url": "https://docs.business.near.com/guides/funding-confidential-treasuries.md",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "round9-sdk-pairing",
+            "quote": "It is particularly well-suited for ZK proofs.",
+            "stance": "context",
+            "sourceClass": "official_docs",
+            "url": "https://docs.rs/near-sdk/5.29.1/near_sdk/env/fn.alt_bn128_pairing_check.html",
+            "exactLocalQuoteMatch": true
+          }
+        ]
+      },
+      "peers": [
+        {
+          "project": "tempo",
+          "optionId": "apps",
+          "confidence": "medium",
+          "rationale": "The only native disclosure primitive reveals the sender's identity, not an attribute. Tempo L1 is a full EVM, so developers can deploy credential-proof verifiers as apps.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "Tempo is fully compatible with the Ethereum Virtual Machine (EVM), targeting the **Osaka** EVM hard fork. Developers can deploy and interact with smart contracts using the same tools, languages, and frameworks they use on Ethereum, such as Solidity, Foundry, and Hardhat.",
+              "sourceClass": "official_docs",
+              "url": "https://tempo.xyz/developers/docs/quickstart/evm-compatibility"
+            },
+            {
+              "quote": "The sender can selectively disclose their identity by revealing `txHash` to any party, who verifies it against the `senderTag` using the withdrawal’s public `fallbackNonce`.",
+              "sourceClass": "official_docs",
+              "url": "https://tempo.xyz/developers/docs/protocol/zones/bridging"
+            }
+          ]
+        },
+        {
+          "project": "zksync-prividium",
+          "optionId": "apps",
+          "confidence": "medium",
+          "rationale": "The native selective-disclosure methods reveal data about a named address (bytecode, supply, holder balance), not attribute proofs that hide identity. ZKsync OS supports arbitrary Solidity contracts and the ecpairing precompile, so developers can deploy ZK verifier apps.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "Implementing precompiles like EVM. We currently support the following precompiles at their EVM addresses:",
+              "sourceClass": "official_docs",
+              "url": "https://docs.zksync.io/zksync-protocol/zksyncos/system-hooks"
+            },
+            {
+              "quote": "Reveals the token balance of a specific holder address along with cryptographic storage proofs.",
+              "sourceClass": "official_docs",
+              "url": "https://docs.prividium.zksync.io/configuring/contracts/selective-disclosure"
+            }
+          ]
+        },
+        {
+          "project": "canton-network",
+          "optionId": "apps",
+          "confidence": "low",
+          "rationale": "The protocol uses no zero-knowledge proofs, but Daml exposes sha256 and secp256k1 signature-verification builtins that apps can use for credential checks. A third-party provider (zkMe) has announced ZK identity verification for Canton apps.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "secp256k1WithEcdsaOnly : SignatureHex -> BytesHex -> PublicKeyHex -> Bool: Verifies an ECDSA signature on the secp256k1 curve, checking if the signature matches the message and public key.",
+              "sourceClass": "official_docs",
+              "url": "https://docs.canton.network/global-synchronizer/release-notes/splice"
+            },
+            {
+              "quote": "Through the integration, zkMe will support applications building on Canton with zero-knowledge identity verification, reusable KYC credentials, and selective disclosure.",
+              "sourceClass": "third_party",
+              "url": "https://blog.zk.me/zkme-integrates-with-canton-network-to-bring-privacy-preserving-identity-to-institutional-onchain-finance"
+            }
+          ]
+        }
+      ],
+      "recommendation": "Сохранить apps с medium и явно назвать выводом из документированной возможности разработки приложений.",
+      "reason": "Опция требует возможности построить приложение, а не уже запущенного credential-сервиса. Официальные guides связывают private treasury smart contracts с private shard near.com и описывают функциональность public shard. Pinned SDK поддерживает verifier для ZK. У Tempo/Prividium apps также выводится из возможностей VM/криптографических операций.",
+      "limits": [
+        "Это не native credential primitive.",
+        "Не доказано наличие deployed credential app.",
+        "Размещение контрактов допускается по согласованию, не permissionless.",
+        "Сам SDK не доказывает private deployed binary; связка опирается на применимую документацию о функциональности."
+      ],
+      "editorialDecision": false,
+      "establishedMismatch": false
+    },
+    {
+      "criterionId": "coverage.unlinkability.public-apps",
+      "question": "Can users call public contracts or DeFi without revealing their account?",
+      "guidance": "The initiator must stay hidden. The public call itself may be visible.",
+      "option": "anonymous: Initiator hidden",
+      "near": {
+        "optionId": "anonymous",
+        "confidence": "medium",
+        "rationale": "The official Perps reference flow claims a dedicated Hyperliquid account with confidential funding and return to the private account. This supports a documented DeFi adapter that hides the originating FAR account, not arbitrary anonymous public calls or private Hyperliquid positions. The vendor claim is decisive marketing evidence; client checks corroborate the supported integration but are contextual rather than proof of unlinkability. The EVM fallback may use a connected public address; the classification is for the supported dedicated-account confidential path. The client also contains a wallet-to-trading-address lookup API; its access policy and real linkage were not established. A later anonymous synthetic lookup returned an empty 403, which is not proof of access protection at the cutoff. No empirical anonymity measurement is claimed.",
+        "evidence": [
+          {
+            "sourceId": "round8-perps",
+            "quote": "Deposits and withdrawals to and from that account are confidential.",
+            "stance": "supports",
+            "sourceClass": "marketing",
+            "url": "https://perps.near.com/",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "round8-perps",
+            "quote": "Nobody can trace your position back to you.",
+            "stance": "supports",
+            "sourceClass": "marketing",
+            "url": "https://perps.near.com/",
+            "exactLocalQuoteMatch": true
+          },
+          {
+            "sourceId": "coverage-product",
+            "quote": "Move funds between your confidential and public NEAR Intents accounts at any time, or withdraw to any foreign chain.",
+            "stance": "context",
+            "sourceClass": "marketing",
+            "url": "https://intents.near.org/confidential",
+            "exactLocalQuoteMatch": true
+          }
+        ]
+      },
+      "peers": [
+        {
+          "project": "tempo",
+          "optionId": "anonymous",
+          "confidence": "medium",
+          "rationale": "Withdrawal callbacks reach Tempo contracts through ZoneMessenger, which passes only the zoneId, portal, senderTag, token, amount and data. Live tx 0xa476f761… (Zone 1, 2026-09-29) shows a vault redemption and re-deposit sent by sequencer 0x5b8bd9cb, with the Zone account not shown; the admin-curated gateway list limits which contracts can be called but does not reveal the initiator.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "try IWithdrawalReceiver(target).onWithdrawalReceived{ gas: gasLimit }(\n            zoneId, msg.sender, senderTag, token, amount, data\n        ) returns (",
+              "sourceClass": "code_onchain",
+              "url": "https://github.com/tempoxyz/zones/blob/v0.3.3/crates/contracts/src/runtime/tempo/ZoneMessenger.sol"
+            },
+            {
+              "quote": "The sequencer executes the transaction and sends a message to the Zone portal on Tempo, using a blinded commitment instead of Bob’s address.",
+              "sourceClass": "official_docs",
+              "url": "https://tempo.xyz/developers/blog/privacy-with-tempo-zones"
+            }
+          ]
+        },
+        {
+          "project": "strk20",
+          "optionId": "anonymous",
+          "confidence": "medium",
+          "rationale": "The pool contract itself calls external DeFi or anonymizer contracts, so the user's account isn't the caller. Official docs say open notes protect who interacts with DeFi, though the filled amount, target and calldata are public.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "let mut return_data = call_contract_syscall(\n                address: contract_address, entry_point_selector: selector, :calldata,\n            )\n                .unwrap_syscall();\n            self.emit(events::ExternalContractInvoked { contract_address, selector });",
+              "sourceClass": "code_onchain",
+              "url": "https://github.com/starkware-libs/starknet-privacy/blob/CONTRACT_V2_DEPLOYED_MAINNET_2026-07-08/packages/privacy/src/privacy.cairo"
+            },
+            {
+              "quote": "Privacy tradeoff:** open notes protect **who** is interacting with DeFi and how notes chain through the pool, but they **do not** hide the filled amount on that leg.",
+              "sourceClass": "official_docs",
+              "url": "https://docs.starknet.io/build/starknet-privacy/notes-and-nullifiers"
+            }
+          ]
+        },
+        {
+          "project": "aztec",
+          "optionId": "anonymous",
+          "confidence": "medium",
+          "rationale": "Private functions can enqueue public calls in the same transaction. enqueue_incognito sets a null msg_sender, and the reference AMM keeps who acted private while the action and amounts are public. The plain enqueue reveals msg_sender, so this depends on app design, and whether the fee payer reveals the account is scored under Fees.",
+          "representativeDecisiveEvidence": [
+            {
+              "quote": "This contract demonstrates how to implement an **Automated Market Maker (AMM)** that maintains **public state**\n/// while still achieving **identity privacy**. However, it does **not provide function privacy**:\n/// - Anyone can observe **what actions** were performed.\n/// - All amounts involved are visible, but **who** performed the action remains private.",
+              "sourceClass": "code_onchain",
+              "url": "https://github.com/AztecProtocol/aztec-packages/blob/v5.2.0/noir-projects/noir-contracts/contracts/app/amm_contract/src/main.nr"
+            },
+            {
+              "quote": "The called public function must use `maybe_msg_sender()` instead of `msg_sender()` to handle the null sender.",
+              "sourceClass": "official_docs",
+              "url": "https://github.com/AztecProtocol/aztec-packages/blob/v5.2.0/docs/docs-developers/docs/resources/considerations/limitations.md"
+            }
+          ]
+        }
+      ],
+      "recommendation": "Сохранить anonymous только для документированного dedicated-account Perps пути; особо пометить decisive marketing claim и непроверенную политику linkage API для редактора.",
+      "reason": "Опция допускает отдельный поддерживаемый DeFi путь, не требует произвольных публичных вызовов и независимого эмпирического исследования. Первичный Perps сайт прямо заявляет dedicated account, confidential deposits/withdrawals и отсутствие трассировки назад к пользователю. Публичность позиций Hyperliquid не противоречит критерию об инициаторе. Наличие lookup API не доказывает доступность связки для публики. Однако доказательства у peers сильнее (code+docs), поэтому источник Near нельзя повысить до code_onchain.",
+      "limits": [
+        "Decisive anonymity claim — marketing, не доказательство независимой проверки.",
+        "Самостоятельный публичный EVM fallback не получает это свойство.",
+        "Не установлена доступность реального wallet-to-trading-address linkage API.",
+        "Не утверждается приватность торговых позиций или самого Hyperliquid account."
+      ],
+      "editorialDecision": true,
+      "establishedMismatch": false
+    }
+  ],
+  "documentationCorrections": [
+    {
+      "criterionId": "decentralization.settlement.data",
+      "issue": "searchLog.note still opens Unknown preserves ... followed by old remains unestablished text although current answer is onchain. Rewrite to distinguish superseded research uncertainty from current limited proposed classification."
+    },
+    {
+      "criterionId": "coverage.unlinkability.public-apps",
+      "issue": "searchLog.note contains old Still not established / this unknown text although current answer is anonymous. Rewrite to describe current marketing-supported path and unresolved linkage question."
+    }
+  ],
+  "conclusion": "Прямого несоответствия выбранных опций буквальной рубрике не установлено. Все три допустимы как документированный contributor draft с нынешними ограничениями. Два пограничных решения (закрытая onchain DA и anonymity claim Perps) должны быть видимыми редакторскими вопросами. Не требовать universally live tests / private binary attestation / published credential app, которых эти критерии не требуют."
+}

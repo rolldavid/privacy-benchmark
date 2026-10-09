@@ -1,0 +1,71 @@
+{
+  "rubricVersion": "1.3.0",
+  "asOf": "2026-10-08",
+  "answered": 84,
+  "unknown": 21,
+  "notApplicable": 1,
+  "sources": 113,
+  "corpusFiles": 466,
+  "overall": 26.038,
+  "privacyLevel": "Z3",
+  "trustTier": null,
+  "walkaway": {
+    "passed": false,
+    "reasons": ["Exiting needs someone else's cooperation", "Users can't recover funds without the operator", "Spending needs a party other than the user"]
+  },
+  "suites": {
+    "coverage": 42.525,
+    "trust": 21.5,
+    "custody": 8.75,
+    "programmability": 26.1,
+    "governance": 8.45,
+    "decentralization": 26.4,
+    "security": 42
+  },
+  "researchCoverage": {
+    "covered": 105,
+    "total": 106,
+    "ratio": 0.9905660377358491,
+    "suites": [
+      {
+        "suiteId": "coverage",
+        "covered": 28,
+        "total": 28
+      },
+      {
+        "suiteId": "trust",
+        "covered": 10,
+        "total": 10
+      },
+      {
+        "suiteId": "custody",
+        "covered": 16,
+        "total": 16
+      },
+      {
+        "suiteId": "programmability",
+        "covered": 20,
+        "total": 21
+      },
+      {
+        "suiteId": "governance",
+        "covered": 9,
+        "total": 9
+      },
+      {
+        "suiteId": "decentralization",
+        "covered": 11,
+        "total": 11
+      },
+      {
+        "suiteId": "security",
+        "covered": 11,
+        "total": 11
+      }
+    ],
+    "notResearched": 0,
+    "badgeGaps": [],
+    "blocker": null
+  },
+  "note": "Manual contributor dossier; original rubric1.3.0 and original scorer. Scope and editorial interpretation limits in EDITOR_REVIEW.md. No upstream publication; standalone checker performs no import. Private versions/operator access remain unverified."
+}

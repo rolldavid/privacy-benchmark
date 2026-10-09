@@ -1,0 +1,749 @@
+{
+  "reviewer": "Final review: all106 criteria checked against archived sources by two bounded independent reviews, plus importer and preview verification",
+  "asOf": "2026-10-08",
+  "source": "Manual research; no upstream automated evaluator was run",
+  "criteria": [
+    {
+      "criterionId": "coverage.confidentiality.amounts",
+      "status": "answered",
+      "optionId": "hidden",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Score internal FAR activity, not the public deposit or withdrawal. The official architecture explicitly hides swap details from public observers and public indexers. This is restricted publication, not a claim of encrypted amounts against the service, solvers or validators."
+    },
+    {
+      "criterionId": "coverage.confidentiality.balances",
+      "status": "answered",
+      "optionId": "hidden",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. FAR account balances are excluded from public access. The documented account API requires ownership authentication. Public treasury backing is not a public per-user balance ledger; boundary correlation remains a separate limitation."
+    },
+    {
+      "criterionId": "coverage.confidentiality.asset",
+      "status": "answered",
+      "optionId": "hidden",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The asset pair belongs to the internal swap details that the architecture removes from public indexers. IMT asset IDs are explicit to solvers and infrastructure, but are not public per-transaction tags. Asset visibility at deposits and withdrawals is scored at the boundary."
+    },
+    {
+      "criterionId": "coverage.confidentiality.boundary",
+      "status": "answered",
+      "optionId": "boundary-public",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented shield/unshield path transfers backing assets to and from a public NEAR treasury. Internal activity is private from public observers; entry and exit transfers are not. No native FAR asset or private bridge path avoiding this public backing boundary was established."
+    },
+    {
+      "criterionId": "coverage.unlinkability.sender",
+      "status": "answered",
+      "optionId": "hidden",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The internal FAR transaction is omitted from public view, including its initiating account. This only credits sender shielding for transfers inside the private path. Public deposit senders, service-level signer IDs and possible timing/amount inference are not claimed hidden."
+    },
+    {
+      "criterionId": "coverage.unlinkability.recipient",
+      "status": "answered",
+      "optionId": "hidden",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The internal recipient is part of private FAR activity rather than a public settlement record. External payout recipients and public unshield recipients are outside this internal-transfer guarantee. This does not claim that a solver, relay or operator cannot identify the recipient."
+    },
+    {
+      "criterionId": "coverage.unlinkability.history",
+      "status": "answered",
+      "optionId": "linkable",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented private interface retains account-based token_diff and signed account nonces. Restricted publication does not replace the ledger graph with unlinkable receipts/nullifiers. Apply the same account-ledger distinction as Tempo/Prividium without claiming that FAR internal history is publicly readable."
+    },
+    {
+      "criterionId": "coverage.unlinkability.public-apps",
+      "status": "answered",
+      "optionId": "anonymous",
+      "decision": "accept",
+      "reason": "The official Perps reference flow claims a dedicated Hyperliquid account with confidential funding and return to the private account. This supports a documented DeFi adapter that hides the originating FAR account, not arbitrary anonymous public calls or private Hyperliquid positions. The vendor claim is decisive marketing evidence; client checks corroborate the supported integration but are contextual rather than proof of unlinkability. The EVM fallback may use a connected public address; the classification is for the supported dedicated-account confidential path. The client also contains a wallet-to-trading-address lookup API; its access policy and real linkage were not established. A later anonymous synthetic lookup returned an empty 403, which is not proof of access protection at the cutoff. No empirical anonymity measurement is claimed."
+    },
+    {
+      "criterionId": "coverage.unlinkability.fees",
+      "status": "answered",
+      "optionId": "optional-relayer",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The embedded confidential balance path uses an off-chain signature submitted to the mandatory 1Click endpoint rather than requiring the user to publish a gas-paying FAR account transaction. The documented required path is one service family; independent default broadcasters or distributed traffic shares are not established. Therefore credit the rubric middle option, not fully distributed private fee payment."
+    },
+    {
+      "criterionId": "coverage.identity.persistent-id",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Public boundary transfers expose source/destination addresses, whereas internal FAR activity is not published. The rubric requires deciding whether stable public tags attach to all necessary activity; neither a private-network address alone nor public addresses on boundary transfers settles that question for the whole near.com account flow. No verified reference-client trace establishes all published identifiers."
+    },
+    {
+      "criterionId": "coverage.identity.registration",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The supported implicit-account wallet path derives an account from the public key and explicitly skips registration. Owner signatures for a User-Session authenticate private reads; they are not private viewing-key escrow or identity registration. Named-account signing-key registration and partner KYB are not mandatory for this supported implicit route."
+    },
+    {
+      "criterionId": "coverage.identity.reusable-address",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Internal account activity is hidden from public observers, but no default stealth/one-time receiving address derivation or reference-client receiving behavior is specified. A recipient account accepted by the confidential API is not sufficient evidence of unlinkable receiving addresses as defined by this criterion."
+    },
+    {
+      "criterionId": "coverage.identity.identity-proofs",
+      "status": "answered",
+      "optionId": "apps",
+      "decision": "accept",
+      "reason": "The rubric explicitly defines via apps as developers can build it; a currently deployed anonymous credential app is not required. Applicable treasury documentation establishes approved smart contracts on near.com's private shard and states public-shard functionality is provided there. Public SDK 5.29.1, pinned in the matched current core Cargo.lock, supplies pairing verification suited to ZK proofs. This supports an application-level implementation as a documented capability inference, consistent with peer VM-capability reasoning. It does not establish a native anonymous-identity primitive, permissionless admission, a deployed credential app or an independently byte-verified private host. If the private host restricts these application operations, this classification needs revision."
+    },
+    {
+      "criterionId": "coverage.execution.private-state",
+      "status": "answered",
+      "optionId": "balances-only",
+      "decision": "accept",
+      "reason": "The directly established hidden state is financial state in intents.far and documented approved confidential treasury apps: balances, transfers and swaps. Approved private applications exist; that is not denied. General programming functionality and app-level cryptographic proof verification do not independently establish secrecy of arbitrary custom storage fields in the current FAR runtime. Select the demonstrated balances-only bound without claiming that broader unpublished private state is impossible."
+    },
+    {
+      "criterionId": "coverage.execution.private-logic",
+      "status": "answered",
+      "optionId": "limited",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented confidential quote settlement uses token_diff and optional imt_burn, enabling private swaps beyond deposit/transfer/withdraw. This qualifies as the fixed-menu middle option. It does not establish arbitrary user-defined hidden programs or encrypted-input computation."
+    },
+    {
+      "criterionId": "coverage.execution.function-hiding",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. A special Zexe construction is not a universal requirement: Prividium was credited from non-public per-transaction calls. FAR hides publication but the supported path uses a known canonical ledger and fixed operations. The options do not cleanly represent a known contract with hidden action details; deployed private-program/call coverage remains unestablished. This classification ambiguity, rather than a demanded ZK construction, remains unknown."
+    },
+    {
+      "criterionId": "coverage.execution.shared-state",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The supported confidential path is an account-balance ledger with ordinary token_diff settlement and individually encrypted histories. Matching several account deltas is not a developer primitive for FHE, MPC or pooled encrypted-state computation. Apply the same encrypted-computation distinction used for Canton/Prividium. This concerns the documented capabilities of the evaluated Intents path; it does not deny all possible computations of an unpublished FAR VM or credit an arbitrary private application."
+    },
+    {
+      "criterionId": "coverage.callstack.targets",
+      "status": "answered",
+      "optionId": "visible",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The assessed reference-client capability is fixed token_diff/IMT ledger operations, not documented private app-to-app execution. The rubric explicitly assigns Visible to a single fixed-function system without such private call stacks. This classifies supported application-call capability; it does not expose all FAR data or assert that the underlying VM can never call a contract."
+    },
+    {
+      "criterionId": "coverage.callstack.structure",
+      "status": "answered",
+      "optionId": "visible",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The assessed reference-client capability is fixed token_diff/IMT ledger operations, not documented private app-to-app execution. The rubric explicitly assigns Visible to a single fixed-function system without such private call stacks. This classifies supported application-call capability; it does not expose all FAR data or assert that the underlying VM can never call a contract."
+    },
+    {
+      "criterionId": "coverage.callstack.public-boundary",
+      "status": "answered",
+      "optionId": "visible",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The assessed reference-client capability is fixed token_diff/IMT ledger operations, not documented private app-to-app execution. The rubric explicitly assigns Visible to a single fixed-function system without such private call stacks. This classifies supported application-call capability; it does not expose all FAR data or assert that the underlying VM can never call a contract."
+    },
+    {
+      "criterionId": "coverage.metadata.network",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The reference interface policy explicitly collects IP addresses during interface use. Thus user IP is not hidden from every network party by default, irrespective of whether a relayer hides the public gas payer. No documented built-in opt-in Tor/mixnet setting was established."
+    },
+    {
+      "criterionId": "coverage.metadata.reads",
+      "status": "answered",
+      "optionId": "rpc-sees",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Private balance and history reads require an owner-signed session at 1Click. The API associates the session with signer_id and returns that account data; the tokenIds selector identifies requested assets. The example also reads all balances through AccountService, not local trial decryption. These are account-specific service queries."
+    },
+    {
+      "criterionId": "coverage.metadata.pending",
+      "status": "answered",
+      "optionId": "plaintext",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. For confidential account balances, signed-intent submission to 1Click is the required documented path. Before inclusion the service receives signedData containing ordinary account-identified intent messages; private relay quote requests likewise carry asset IDs and signed quotes. These are signed structured payloads, not hiding proofs or encrypted application payloads. Classify the documented pre-inclusion service input as plaintext. TLS protects transport, but is not proof of a ciphertext-only mempool; production ingress/enclave topology was not independently inspected."
+    },
+    {
+      "criterionId": "coverage.metadata.fingerprinting",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Reference signed requests have variable asset IDs, amounts and deadlines, with visible public-boundary amounts/timing. The documented interface supplies no enforced uniform-shape, padding or batching mitigation. The option includes documented leaks; it does not assert universal absence of every mitigation in unavailable deployment code."
+    },
+    {
+      "criterionId": "coverage.anonymity-set.structure",
+      "status": "answered",
+      "optionId": "shared",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented FAR deployment has one canonical intents.far multi-asset ledger and one production Treasury identifier shared by all participants; IMT IDs wrap different assets in that same ledger. Use Shared for the nominal visibility domain, as the published Prividium evaluation does for one closed off-chain state across assets/apps. A separate cryptographic mixing pool, arbitrary private dapp deployment or measured effective candidate set is not required by this structural criterion. Public asset/amount/timing boundaries can partition the effective set; no cryptographic receipt/spend unlinkability or measured anonymity is inferred. Vendor statements that privacy does not depend on mixing/anonymity-pool size describe a different guarantee and are retained as context."
+    },
+    {
+      "criterionId": "coverage.anonymity-set.default",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "The Sep17 company announcement describes near.com as confidential by default, while the saved product page describes opting in through a Main/Confidential Account toggle. The toggle page has no verified earlier publication/version date, so the earlier claim that the announcement supersedes it was unsupported. The archived client and public login observation do not settle the initial account mode for an ordinary new user. Keep the conflict unresolved rather than treating a marketing default as verified current behavior. Generic 1Click public defaults refer to a separate integration route."
+    },
+    {
+      "criterionId": "coverage.anonymity-set.usage",
+      "status": "answered",
+      "optionId": "large",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The logical private Treasury in public intents.near was enumerated at block 218948544: 149 of 175 tokens were priced from the official catalogue, totaling about $149.09M of documented private backing; 26 unpriced assets were excluded. This satisfies the value-based usage proxy. It is not ordinary Intents volume, private TPS or an independent audit of FAR IMT supply; quantities and quote prices have separate observation times. Round5 reproduces the recorded arithmetic and compares escrow-based usage evidence used for Tempo/Prividium/STRK20. This is the same disclosed backing proxy interpretation, not an equality claim between every Treasury token and issued FAR IMT supply. The separate Sep17 official $70M confidential-TVL claim is older and does not independently establish the Oct7 $100M tier."
+    },
+    {
+      "criterionId": "coverage.anonymity-set.effective",
+      "status": "answered",
+      "optionId": "no-study",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. A targeted search found no independent quantitative study of effective versus nominal anonymity for this FAR implementation by the assessment cutoff. Product explanations and market/TVL reports are not linkability measurements. This uses the rubric explicit no-study option rather than an unknown or a fabricated percentage."
+    },
+    {
+      "criterionId": "trust.decryption.standing-access",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The official pinned Pinet indexer explicitly targets intents.far and has a supported ordinary JSON transaction/event storage path. Its generic EventJson.data may carry ciphertext, however, and the typed PostgreSQL transfer view filters public contracts rather than FAR. Thus source format alone does not establish standing access to confidential user amounts/balances/history. Structured signed-intent service inputs and Business operator-access statements are relevant leads, but the selected retail production key/enclave topology and actual FAR event semantics remain unverified. No user-only or routine-operator claim is established, and no global key is inferred."
+    },
+    {
+      "criterionId": "trust.decryption.infra-visibility",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The supported FAR/Pinet ClickHouse path preserves transaction envelopes/actions and generic event JSON. A JSON value can contain encrypted private fields; the separate typed transfer table does not demonstrate FAR values because its production filter names public contracts. Mandatory signed-intent requests establish documented structured pre-inclusion service input, but not the boundary at which retail infrastructure can inspect private values outside a protected execution environment. The actual FAR payload semantics and default ingress/enclave topology are unresolved, so neither plaintext-operator nor TEE-only classification is established."
+    },
+    {
+      "criterionId": "trust.decryption.retroactive",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The sources establish access-controlled infrastructure but do not specify storage encryption, archive retention, backup keys or a global/threshold decryption-key hierarchy. Legal disclosure capability is not proof of a global key. It remains unsettled whether compromise of a particular key or committee would reveal every user history."
+    },
+    {
+      "criterionId": "trust.disclosure.selective",
+      "status": "answered",
+      "optionId": "apps",
+      "decision": "accept",
+      "reason": "The served near.com reference client offers a per-send signed PDF and an optional internal funding-details switch. The same WithdrawStatus supports confidential operations and does not exclude them from the successful-send receipt button. A user can give the selected receipt to a party they choose. This is app-specific export, not a native viewing key or FAR state proof. The issue endpoint was not invoked on a real transaction."
+    },
+    {
+      "criterionId": "trust.disclosure.granularity",
+      "status": "answered",
+      "optionId": "fine",
+      "decision": "accept",
+      "reason": "The receipt identifies one completed send, with a user-controlled includeInternalDetails flag. Its scope is a transaction rather than all account history. The fine option is supported by the per-send export; ordinary history query filters are not treated as access-control scopes."
+    },
+    {
+      "criterionId": "trust.disclosure.revocable",
+      "status": "answered",
+      "optionId": "yes",
+      "decision": "accept",
+      "reason": "The official supported User-Session mechanism allows a user to authorize an integration to read confidential balances/history. Access and refresh credentials have returned expiration times; an access-only grant limits future reads without giving the refresh credential. This satisfies limiting disclosure going forward, as expiring delegated RPC access does in Tempo. Immediate per-viewer revocation was not verified; exported PDFs and data already copied remain readable. Illustrative one-hour/30-day values are not asserted as universal production bounds."
+    },
+    {
+      "criterionId": "trust.crypto.setup",
+      "status": "answered",
+      "optionId": "no-proofs",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The selected privacy mechanism is restricted visibility on a permissioned NEAR fork, with a PoA/TEE bridge, rather than a zero-knowledge transaction proof system. Normal signatures and bridge attestations should not be awarded a transparent ZK setup score. The product explicitly advertises no client-side proof generation; no ZK confidentiality proof system is specified for FAR."
+    },
+    {
+      "criterionId": "trust.crypto.hardware",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. A TEE-based bridge is explicitly part of the system, but the public material does not state whether its TEE is essential to confidentiality, only to bridge integrity, or merely defense in depth. It also does not document TEE coverage for validators or services. Neither no reliance nor the more specific confidentiality/integrity classification is established."
+    },
+    {
+      "criterionId": "trust.crypto.post-quantum",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The sources do not specify FAR private-data encryption at rest or in transit with sufficient detail to classify harvest-now-decrypt-later resistance. Ed25519 authorization, public NEAR commitments and unrelated Chain Signatures/CKD work do not establish post-quantum confidentiality of this private system."
+    },
+    {
+      "criterionId": "trust.crypto.formal-privacy",
+      "status": "answered",
+      "optionId": "de-facto",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The technical definition is operational restricted visibility: a private NEAR fork with authenticated RPC and no public networking. This is an informal confidentiality model, not a formally specified zero-knowledge property. The product also explicitly distinguishes the design from ZK-only systems. This answer does not mean ordinary signature integrity is absent."
+    },
+    {
+      "criterionId": "custody.self-custody.spending",
+      "status": "answered",
+      "optionId": "federation",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Users sign intents, but the criterion includes backing custody, not only ordinary account authorization. Private balances are backed by a Treasury account and redeemed through a mandatory PoA bridge; the terms say bridge validators or authorities may control assets in flight. This is authority-held bridge backing, rather than purely user-key custody or a validity-proven canonical bridge. The signers and threshold are not established, so no claim of a named independent federation is made."
+    },
+    {
+      "criterionId": "custody.self-custody.backing",
+      "status": "answered",
+      "optionId": "committee-bridge",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. IMTs are 1:1 backed by tokens in the public Treasury and are minted/redeemed through the Private PoA Bridge. The authority-based bridge fits the committee/authority bridge category; no validity-proof canonical bridge is established. This identifies the documented architecture, without inventing a bridge threshold or operator roster."
+    },
+    {
+      "criterionId": "custody.self-custody.recoverability",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The rubric requires publicly available recovery data and sufficient user keys. FAR has no public networking and its RPC requires authenticated access; private balances and history come from a required User-Session service. User-held signing keys alone cannot reconstruct and spend the full private state from public data if this infrastructure disappears."
+    },
+    {
+      "criterionId": "custody.pause.pause-fn",
+      "status": "answered",
+      "optionId": "any-single",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The mandatory public backing ledger is pausable. Live PauseManager grants include individual implicit accounts; the checked holder has no contract code and one FullAccess key. One onchain key can pause this canonical backing component. These observations do not assign FAR validator roles or imply an observed seizure."
+    },
+    {
+      "criterionId": "custody.pause.halt",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Seven permissioned validators are advertised, but the source does not establish their names, independent ownership, voting weights, threshold for liveness, infrastructure control or a halt switch. The small-set option requires at least three independent parties. Counting advertised validators alone cannot prove that threshold."
+    },
+    {
+      "criterionId": "custody.pause.exits-during-pause",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "The matched public Verifier v0.4.5 has pause guards on ft_withdraw and execute_intents. The documented confidential exit requires burn/bridge release of assets from this mandatory public backing component; it has no pause-resistant withdrawal guarantee. This is a proven pauseable core withdrawal path, not an inference from sanctions screening and not a claim that FAR block production has halted. Ordinary screening remains a separate restriction."
+    },
+    {
+      "criterionId": "custody.pause.track-record",
+      "status": "answered",
+      "optionId": "one",
+      "decision": "accept",
+      "reason": "At least one protocol pause in the last 12 months is supported by the official Oct1 service-stop incident involving the canonical Intents contract and the pinned Approved proposal98 requesting pa_pause_feature for mt_on_transfer on intents.near. This mandatory backing contract is in scope; this is a protocol-component pause, not merely a website outage. Select One as the supported adverse bound under CONFLICT_RULES, not as an exact complete incident total. Proposal status is not substituted for a transaction execution receipt, and no halt of FAR block production is claimed. Other unpause proposals may be idempotent. A Sep1 historical read found both checked flags false at one sampled time; later archival requests hit endpoint deprecation/rate limiting and cannot establish the full history."
+    },
+    {
+      "criterionId": "custody.freeze.blocklist",
+      "status": "answered",
+      "optionId": "protocol-wide",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The canonical public ledger has force_lock_account for arbitrary logical accounts, including private Treasury backing. The live UnrestrictedAccountLocker role has an individual key holder. This is a protocol capability affecting the mandatory backing path; a deployed FAR blocklist is not asserted."
+    },
+    {
+      "criterionId": "custody.freeze.seizure",
+      "status": "answered",
+      "optionId": "admin",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Public intents.near has DAO-authorized forced transfers, confirmed against its metadata-linked source and matching build artifact. DAO is currently granted to intents.sputnik-dao.near. That canonical role can move Treasury backing regardless of visibility into private FAR administration. This records a capability, not an observed asset seizure."
+    },
+    {
+      "criterionId": "custody.freeze.systemic",
+      "status": "answered",
+      "optionId": "yes",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Private IMTs share one logical Treasury in the public backing ledger. A canonical force_lock_account action can restrict ordinary release/transfer of that pooled backing for every private holder, instead of isolating one holder. This does not assume a particular third-party stablecoin blacklist transaction."
+    },
+    {
+      "criterionId": "custody.exit.unilateral",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented exit requires a FAR burn and mandatory Private PoA Bridge release of Treasury backing; the bridge is request-driven and access is controlled. This is not a unilateral live exit if the required operator disappears or refuses service. Solver recover intents cover failed settlement, not escape from a hostile/offline bridge."
+    },
+    {
+      "criterionId": "custody.exit.window",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. No positive guaranteed exit window is established for the mandatory backing/private-bridge route: users have no unilateral reference-client redemption if the operator refuses, and the observed public backing upgrade completed less than seven days after its public proposal. This does not assert a measured zero upgrade delay in private FAR."
+    },
+    {
+      "criterionId": "custody.exit.gatekeeper",
+      "status": "answered",
+      "optionId": "can-refuse",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Unshielding depends on the private bridge processing the burn and releasing public backing. The applicable service terms allow bridge transfers to be blocked or rejected. No public user-controlled fallback that bypasses this bridge is specified; normal public withdrawal after an accepted unshield does not remove that gate."
+    },
+    {
+      "criterionId": "custody.access.entry",
+      "status": "answered",
+      "optionId": "screened",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The reference client uses 1Click quote and bridge routes. Automated address checks operate on integrated quote flows, and the applicable terms explicitly permit restrictions on bridging/deposits. This is screened entry for the reference route, not a claim that every user must complete KYC or that all alternative routes share identical enforcement."
+    },
+    {
+      "criterionId": "custody.access.private-exit",
+      "status": "answered",
+      "optionId": "gate",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented private exit requires the same bridge and 1Click processing, and bridge screening can block or reject transfers. No always-live public fallback from an existing FAR balance that bypasses the private bridge is established. The refundable foreign-to-foreign deposit and solver recover flows are not escape routes for an embedded Confidential Account."
+    },
+    {
+      "criterionId": "custody.access.screening",
+      "status": "answered",
+      "optionId": "address-screening",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The current implementation compares addresses in quote requests to external risk databases (including TRM, AMLBot/PureFi and Binance AML). This is third-party screening of public addresses, not a user-generated zero-knowledge proof. Possible developer KYB and geographic restrictions do not establish mandatory end-user identity disclosure as the normal selected path."
+    },
+    {
+      "criterionId": "programmability.contracts.model",
+      "status": "answered",
+      "optionId": "fixed",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The evidenced live FAR integration offers ledger transfers, token-diff swaps and shield/unshield actions. It is scored as fixed-function private actions. Being a NEAR fork does not establish that third parties can deploy general-purpose private programs."
+    },
+    {
+      "criterionId": "programmability.contracts.deployment",
+      "status": "answered",
+      "optionId": "allowlisted",
+      "decision": "accept",
+      "reason": "Official current technical documentation describes confidential multisig treasury contracts deployed on the private shard and explicitly identifies it as near.com's shard. It describes an available treasury-creation flow. This supports documented operator-approved contract applications, the rubric's middle option, without claiming open arbitrary deployment. Private bytecode, deployer ACL and the exact hybrid governance placement remain unverified; public governance metadata must not be assumed secret."
+    },
+    {
+      "criterionId": "programmability.contracts.standards",
+      "status": "answered",
+      "optionId": "emerging",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The system documents IMT private asset identifiers and versioned signed-intent conventions. These establish an emerging private integration interface. Private NFT standards and broad use by several independent private applications were not verified, so established standards are not credited."
+    },
+    {
+      "criterionId": "programmability.contracts.accounts",
+      "status": "answered",
+      "optionId": "contracts",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The private path uses contract-ledger accounts and off-chain wallet signatures; the relay verifies signatures against public intents.near while reading FAR balances. This is contract-based account abstraction. Public NEAR native multi-key features do not establish arbitrary native custom authentication or recovery in FAR."
+    },
+    {
+      "criterionId": "programmability.composability.private-private",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Private atomic balance settlement inside intents.far does not establish atomic private function calls between different contracts. No deployed FAR intercontract example or call semantics were located. Public NEAR cross-contract capabilities are not substituted for private-system evidence."
+    },
+    {
+      "criterionId": "programmability.composability.private-public",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented reference path uses separate public and FAR environments with bridge-mediated shield and unshield requests. Public interaction requires releasing funds to the public environment; there is no documented atomic public/private call in one transaction. This describes the evidenced path, not an assertion that future adapters are impossible."
+    },
+    {
+      "criterionId": "programmability.composability.liquidity",
+      "status": "answered",
+      "optionId": "adapters",
+      "decision": "accept",
+      "reason": "The official Earn guide identifies gtUSDCp as Gauntlet USDC Prime (Morpho). The served reference client has an Earn vault interface using the private-mode swap actor, confidential vault-share balances and a canonical Earn quote helper. This supports private users accessing existing public DeFi through bridged/adapter receipt shares. Native arbitrary public-contract calls and atomic composition are not claimed. The server quote helper and any server override of feature availability were not inspected, and no financial operation was executed."
+    },
+    {
+      "criterionId": "programmability.composability.cross-domain",
+      "status": "answered",
+      "optionId": "public-legs",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The mandatory Private PoA Bridge conveys shield and burn/release requests between FAR and public NEAR. This is limited public/private asset messaging, not arbitrary confidential cross-chain calls. Foreign-to-foreign swaps and unrelated Chain Signatures are not credited as private execution composability."
+    },
+    {
+      "criterionId": "programmability.blending.granularity",
+      "status": "answered",
+      "optionId": "per-contract",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Public and private balances occupy different ledger contracts, intents.near and intents.far. Integrators select balance channels rather than marking arbitrary functions or variables private. Per-contract captures this coarse ledger-level choice; a separate Confidential Account does not establish fine-grained hybrid programming."
+    },
+    {
+      "criterionId": "programmability.blending.private-reads",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The relay reads public signature authorization and FAR balances, but that is not a privacy/consistency guarantee for application logic reading public price or configuration state. No live FAR read primitive establishing concealment of the read set or consistency was verified."
+    },
+    {
+      "criterionId": "programmability.blending.crossing",
+      "status": "answered",
+      "optionId": "steps",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Values cross between public NEAR and FAR through explicit shield/unshield steps, using bridge-mediated mint/burn and release. This fits separate steps rather than native atomic public/private state movement."
+    },
+    {
+      "criterionId": "programmability.disclosure.primitives",
+      "status": "answered",
+      "optionId": "limited",
+      "decision": "accept",
+      "reason": "The canonical account API/official SDK supplies a fixed account-wide User-Session read mechanism, and the served client implements a fixed per-send receipt API and signed schema. These are limited mechanisms, not general per-app viewing keys, arbitrarily scoped permissions or encrypted recipient logs. The client receipt endpoint was not separately demonstrated as a general third-party SDK API."
+    },
+    {
+      "criterionId": "programmability.disclosure.compliance-proofs",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The normal supported confidential quote/deposit flow performs external address screening; users submit wallet-authorized intents, not identity-hidden compliance statements. No private compliance-proof interface is exposed by the documented integration. As in the published Canton/Tempo/Prividium evaluations, ordinary AML and signatures do not qualify. This absence is bounded to the supported protocol flow, not a claim that every conceivable future/private third-party app is impossible."
+    },
+    {
+      "criterionId": "programmability.disclosure.verifiable",
+      "status": "answered",
+      "optionId": "plaintext",
+      "decision": "accept",
+      "reason": "The shipped receipt contains disclosed values and an Ed25519 issuer signature. The client verifies the signed document format and visual integrity, but no FAR state/inclusion/completeness proof is represented. Select the middle disclosed-plaintext option: document authentication is established without claiming cryptographic correctness of the underlying private ledger or a complete history."
+    },
+    {
+      "criterionId": "programmability.developer.toolchain",
+      "status": "answered",
+      "optionId": "experimental",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The public Rust/Cargo contract tooling builds a FAR variant and tests IMT primitives. That is more than absent tooling. A mature third-party private-contract debugger/deployment ecosystem is not established, so experimental is used without promising permissionless or stable FAR deployment."
+    },
+    {
+      "criterionId": "programmability.developer.local-dev",
+      "status": "answered",
+      "optionId": "partial",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Published defuse_sandbox tests exercise IMT mint/burn, the documented private-token primitive; the build publishes defuse.far.wasm. These are local components even without a private production hash match. No full local validator/relay/TEE-bridge stack was verified, so only partial local development is credited."
+    },
+    {
+      "criterionId": "programmability.developer.sdks",
+      "status": "answered",
+      "optionId": "one",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. near.com exposes the reference Confidential Account path, and the confidential integration guide uses the Intents SDK. At least one supported SDK/wallet path is established. No count of multiple independent wallets with released Confidential Account functionality was verified; ordinary public Intents integrations are not counted."
+    },
+    {
+      "criterionId": "programmability.developer.familiarity",
+      "status": "answered",
+      "optionId": "mainstream",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The available confidential integration uses mainstream TypeScript and REST/WebSocket APIs, with mode/configuration changes to an existing solver. This credits familiarity of actual fixed-action integration tooling without claiming general-purpose private-contract deployment."
+    },
+    {
+      "criterionId": "programmability.performance.proving-time",
+      "status": "not_applicable",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The reference confidential path does not require user-generated client-side cryptographic proofs. Client proving time is not applicable under the rubric; FAR finality and swap latency are not used as proof-time measurements."
+    },
+    {
+      "criterionId": "programmability.performance.throughput",
+      "status": "answered",
+      "optionId": "low",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. No sustained private TPS was established after a genuine search. The zero-point published option explicitly includes unknown speed, as used for Fhenix/Tempo. Select it without claiming measured <1 TPS, retain an unverified flag and the search log. This is a status correction, not newly obtained throughput data."
+    },
+    {
+      "criterionId": "programmability.performance.cost",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Generic fees name the public intents.near ledger and 1Click quote schedules, but do not establish a typical all-in $1,000 confidential-to-confidential transfer cost through near.com. Foreign-chain gas, partner fee schedules and swaps are not silently substituted for the scoped P2P private transfer. No transaction or paid quote was executed."
+    },
+    {
+      "criterionId": "governance.upgrades.upgradeability",
+      "status": "answered",
+      "optionId": "instant",
+      "decision": "accept",
+      "reason": "A matched public controller v0.3.3 has an active downgrade path to the stored prior Verifier v0.4.4. Current v0.4.5 release metadata provides that downgrade hash and its blob exists. Either granted Downgrader account can invoke the path without a new proposal, vote or notice timer; the controller forwards Borsh-compatible upgrade bytes to the matched public Verifier. This is an immediate change of the mandatory funds-holding core, even though the key is restricted to a pre-registered downgrade target rather than arbitrary new bytes. The earlier <7-day bound is superseded by this verified path. Source tag is tied to the byte-matched vendor release, not rebuilt locally; no rollback was executed. Private FAR/bridge update rights and offchain key custody remain unverified."
+    },
+    {
+      "criterionId": "governance.upgrades.emergency",
+      "status": "answered",
+      "optionId": "single",
+      "decision": "accept",
+      "reason": "The active rollback of the mandatory public backing core is authorized to either of two individual native accounts, without a fresh council vote or notice timer. Onchain authorization is a single-account/key path, so select the single option for the demonstrated bypass; it is not a claim that one human personally holds every key. Public access-key reads show FullAccess keys for the checked holder. Offchain custody or threshold signing and private FAR/bridge emergency policies are not established. This is rollback to a registered version, not proof of arbitrary-byte replacement by that account."
+    },
+    {
+      "criterionId": "governance.upgrades.verifier",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The system has public account-signature checks, FAR execution and bridge verification, but no complete deployed verifier/attestation-key change policy was verified. Absence of user ZK circuits does not settle verification administration, and this criterion does not allow N/A. Public MPC governance is not imported as private bridge control."
+    },
+    {
+      "criterionId": "governance.roles.scope",
+      "status": "answered",
+      "optionId": "funds-or-privacy",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Privileged admission controls gate the confidential solver relay, while authorized SHIELD consumers can impose scoped delay on live integrated 1Click quotes. These roles affect execution access/liveness through the private integration, exceeding advisory or fee-only roles. This is a bounded execution-control finding, not proof of seizure or universal bridge pausing."
+    },
+    {
+      "criterionId": "governance.roles.holders",
+      "status": "answered",
+      "optionId": "single",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Public backing combines a five-address council with critical pause/lock grants on individual key accounts. The checked key account has one FullAccess key and no contract code. That observed critical single-key path prevents rating all privilege as independent multisig governance. Private FAR/bridge signer ownership remains unestablished."
+    },
+    {
+      "criterionId": "governance.roles.transparency",
+      "status": "answered",
+      "optionId": "partial",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Canonical public role memberships and council addresses are readable onchain, including the named protocol DAO contract, while its signers are anonymous addresses and a complete private FAR/bridge holder inventory is unavailable. This is partial transparency, not proof of every holder's identity or delayed role changes."
+    },
+    {
+      "criterionId": "governance.process.control",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Restricted FAR participation and relay admission do not specify who can ultimately impose FAR or private bridge upgrades. Public NEAR social consensus, Foundation activity and token governance cannot be assumed to govern this private fork. No private-system authorization hierarchy or ultimate-controller statement was verified."
+    },
+    {
+      "criterionId": "governance.process.public-process",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. Canonical public backing-ledger proposals and executions are now observed onchain, including Oct 1-2 Verifier upgrades. Whether private FAR/bridge changes follow that same public process remains unestablished. The whole-system answer stays unknown; the observed public process is disclosed separately."
+    },
+    {
+      "criterionId": "governance.process.concentration",
+      "status": "answered",
+      "optionId": "unclear",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Research did not locate FAR/bridge governance voting rules, role-holder distribution or threshold state needed to establish whether one entity can pass changes alone. The rubric explicitly supplies Unclear for this logged research gap. Public NEAR token distribution and nominal private validator count do not resolve private-system voting concentration."
+    },
+    {
+      "criterionId": "decentralization.operators.producers",
+      "status": "answered",
+      "optionId": "permissioned-few",
+      "decision": "accept",
+      "reason": "The published NEAR page revision updated Aug17 states seven permissioned validators. The applicable product page describes the same dedicated private-shard set as independent. Accept the documented 2–9 configuration as a medium-confidence marketing claim, not an independently verified owner census. Technical architecture establishes only a small permissioned set; independence comes from the product page, not that architecture. Ownership, weights and current private genesis remain unverified; historical Node Monster participation is not a current membership count."
+    },
+    {
+      "criterionId": "decentralization.operators.entry",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. FAR is explicitly permissioned and has no public networking. Becoming a public NEAR validator does not grant entry to the private FAR producer set."
+    },
+    {
+      "criterionId": "decentralization.operators.concentration",
+      "status": "answered",
+      "optionId": "unclear",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. No public FAR voting-weight or independent-operator distribution was established. The advertised seven validators do not establish an ownership or client-diversity distribution."
+    },
+    {
+      "criterionId": "decentralization.censorship.forced-inclusion",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. The documented path requires private RPC and bridge processing, but no bounded forced-inclusion mechanism is established for FAR. No such guarantee is inferred from public NEAR inclusion; unavailable deployed node code prevents asserting the absolute absence of all alternatives."
+    },
+    {
+      "criterionId": "decentralization.censorship.observed",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. No dated public dashboard measuring the fraction of FAR blocks censoring transactions was found. Sanctions screening and access controls are not a measured block censorship share."
+    },
+    {
+      "criterionId": "decentralization.censorship.indistinguishable",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. No deployed transaction/enclave topology establishes which private fields FAR producers inspect. Closed networking hides transactions from the public but does not establish indistinguishability to producers."
+    },
+    {
+      "criterionId": "decentralization.proving.client-side",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The reference product explicitly uses private-shard execution without client-side proof generation. Signing an intent is not generating a zero-knowledge transaction proof."
+    },
+    {
+      "criterionId": "decentralization.proving.provers",
+      "status": "answered",
+      "optionId": "permissionless",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. The documented host is a private NEAR protocol instance validating signed ledger operations through its own permissioned consensus. The architecture has no separate zero-knowledge/rollup block prover; the PoA bridge is an authority-based bridge. Use the rubric not-needed branch for host-chain validation, as for Canton. This does not claim permissionless FAR validators."
+    },
+    {
+      "criterionId": "decentralization.proving.verification",
+      "status": "answered",
+      "optionId": "committee",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. FAR is described as permissioned PBFT and asset release as a PoA bridge. Apply the rubric option for known-party re-execution/honest-majority committees; public NEAR consensus does not independently verify confidential FAR state."
+    },
+    {
+      "criterionId": "decentralization.settlement.settlement",
+      "status": "answered",
+      "optionId": "committee",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. Confidential swaps execute on FAR and settle back to public NEAR through the Private PoA Bridge. No public validity proof of private state is established; the evaluated settlement trust boundary is the private committee/bridge, rather than public NEAR consensus alone."
+    },
+    {
+      "criterionId": "decentralization.settlement.data",
+      "status": "answered",
+      "optionId": "onchain",
+      "decision": "accept",
+      "reason": "Apply SCOPE_RULES4 to the selected host FAR itself. Current architecture places the canonical intents.far ledger and settlement on the private NEAR fork; the dated architecture article explicitly describes balances/full history as encrypted onchain. This supports the rubric location option Onchain or L1 DA. The rubric does not add a permissionless/public-RPC requirement. Do not substitute public NEAR backing or infer public reconstruction, guaranteed archival retention, recovery without operators, encryption algorithms or current private image correspondence. These remain unverified and operator-dependent custody is scored separately. The closed-host location interpretation is explicitly recorded for author review."
+    },
+    {
+      "criterionId": "security.soundness.open-critical",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. No complete dated disclosure record for FAR, the private bridge and reference client establishes presence or absence of an unpatched critical issue. Empty public verifier advisories do not prove that the whole system has none."
+    },
+    {
+      "criterionId": "security.soundness.history",
+      "status": "answered",
+      "optionId": "one",
+      "decision": "accept",
+      "reason": "At least one relevant security incident is established by the official Oct1 NEAR Intents statement: a bug in Omni deposit/withdrawal interaction with the canonical Intents smart contract, with preliminary loss mentioned. The mandatory public backing component and its direct predecessor are in scope; the bug need not break FAR encryption to count. Select One as a supported adverse bound under CONFLICT_RULES, not a claim of an exact complete count. The first-party oEmbed truncates before the amount and repair details; neither the reported secondary $3.8M amount nor a current patch status is asserted."
+    },
+    {
+      "criterionId": "security.soundness.defense-in-depth",
+      "status": "answered",
+      "optionId": "several",
+      "decision": "accept",
+      "reason": "Two distinct documented live protective mechanisms act without a new governance vote: quote-time SHIELD delays for incident/anomaly outcomes in the required route, and the public backing contract guardian PauseManager. The role is live at the immutable Oct8 block and current matched code accepts that role directly; neither requires a fresh council proposal to pause. Select Several. Independence here means distinct protective mechanisms, not independent companies, multiple cryptographic provers or complete protection of every private component. Planned broader SHIELD layers are not counted."
+    },
+    {
+      "criterionId": "security.assurance.open-source",
+      "status": "answered",
+      "optionId": "partial",
+      "decision": "accept",
+      "reason": "The source of the byte-matched mandatory public Verifier v0.4.5 is published under the MIT license at pinned revision16d04f6e. Exact source correspondence and licensing of the FAR host, private bridge and near.com privacy components remain unestablished. Credit Partial for the confirmed dependency only."
+    },
+    {
+      "criterionId": "security.assurance.reproducibility",
+      "status": "answered",
+      "optionId": "partial",
+      "decision": "accept",
+      "reason": "The official CI37662362518 for pinned16d04f6e produced a ZIP whose SHA256 matches the GitHub artifact digest; its public defuse.wasm is byte-identical to intents.near v0.4.5 at block219099811. The prior a2dd1408/v0.4.4 match is historical. Build instructions and a FAR variant are public, but no local independent recompilation, deployed FAR byte match or private bridge image match was established. Credit Partial, not whole-stack reproducibility."
+    },
+    {
+      "criterionId": "security.assurance.audits",
+      "status": "answered",
+      "optionId": "none",
+      "decision": "accept",
+      "reason": "The five reports in the official Intents audit folder target Jan-Apr 2025 protocol/passkey/p256 code. Their scope refs do not establish an audit of public Verifier v0.4.4 or the private FAR/bridge/client configuration. Of 103 extracted Guvenkaya scope paths, 100 resolved successfully; three paths were affected by PDF ligature extraction. A byte-exact comparison of the 100 resolved paths to the matched public v0.4.4 source found only seven unchanged utility/export files, not the current critical engine/auth/crypto. Choose the rubric zero option in its Outdated sense; this does not assert that no confidential or unpublished later audit exists. That byte comparison is the preserved Oct7 v0.4.4 audit-scope check, not a new v0.4.5 audit. Current public v0.4.5 is source/build matched; no new independent audit of its full critical scope or the private runtime was established."
+    },
+    {
+      "criterionId": "security.assurance.formal-verification",
+      "status": "answered",
+      "optionId": "no",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. No published machine-checked proof was identified in the submitted source corpus. The importer re-runs the repository canonical formal-verification patterns plus additional prover/tool patterns over every submitted code file, including the complete pinned public Verifier source snapshot. Zero matches produces criterion-scoped native search evidence, as in the published Tempo assessment. This establishes only absence in the archived published corpus; it does not prove that unpublished FAR/bridge implementation has no internal proof. Unpublished proofs cannot earn this rubric credit."
+    },
+    {
+      "criterionId": "security.assurance.bounty",
+      "status": "answered",
+      "optionId": "smaller",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. An active verifier bounty names near/intents and caps critical rewards at $300,000, also subject to 10% affected funds. Credit the public verifier component below $1M; coverage of FAR nodes/private bridge and near.com is not established."
+    },
+    {
+      "criterionId": "security.maturity.status",
+      "status": "answered",
+      "optionId": "mainnet",
+      "decision": "accept",
+      "reason": "Accept the scoped documented classification under the original rubric. General availability is announced, and the dated May architecture article describes working confidential near.com balances, transfers, swaps and withdrawals. No current alpha/beta label is identified. Credit product availability; exact FAR binaries and operator independence remain unverified."
+    },
+    {
+      "criterionId": "security.maturity.age",
+      "status": "answered",
+      "optionId": "3m",
+      "decision": "accept",
+      "reason": "The May 27, 2026 article describes confidential near.com deposits, withdrawals, swaps and transfers as already available. The selected privacy route is at least three months and under a year old by October 8. July B2B rollout is another milestone; public NEAR launch age is not used."
+    },
+    {
+      "criterionId": "security.maturity.continuity",
+      "status": "unknown",
+      "optionId": null,
+      "decision": "accept",
+      "reason": "Retain researched uncertainty under the original rubric. No complete dated record of forced FAR balance/state migrations was found. A state_migrate function and changelog feature updates do not prove that users have or have never been forced to withdraw and redeposit."
+    }
+  ]
+}

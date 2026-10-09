@@ -1,0 +1,115 @@
+lints.workspace = true
+
+[package]
+name = "defuse"
+version = "0.4.4"
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+readme = "../README.md"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+defuse-admin-utils.workspace = true
+defuse-auth-call.workspace = true
+defuse-controller.workspace = true
+defuse-core = { workspace = true, features = ["near-contract"] }
+defuse-near-promise = { workspace = true, features = ["serde"] }
+defuse-near-utils = { workspace = true, features = ["borsh"] }
+defuse-nep245 = { workspace = true, features = ["near-contract"] }
+defuse-serde-utils = { workspace = true, features = ["base64"] }
+
+borsh = { workspace = true, features = ["derive"] }
+impl-tools.workspace = true
+itertools.workspace = true
+near-contract-standards.workspace = true
+near-plugins.workspace = true
+near-sdk = { workspace = true, features = ["deterministic-account-ids"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+thiserror.workspace = true
+
+arbitrary = { workspace = true, features = ["derive"], optional = true }
+bitflags = { workspace = true, optional = true }
+defuse-bitmap = { workspace = true, optional = true }
+defuse-borsh-utils = { workspace = true, optional = true }
+defuse-digest = { workspace = true, features = ["sha2"] }
+defuse-map-utils = { workspace = true, features = ["near"], optional = true }
+defuse-wnear = { workspace = true, optional = true }
+schemars = { workspace = true, features = ["derive"], optional = true }
+
+[features]
+abi = [
+  "borsh/unstable__schema",
+  "defuse-core/abi",
+  "defuse-near-promise/abi",
+  "defuse-near-utils/abi",
+  "defuse-nep245/abi",
+  "defuse-serde-utils/abi",
+  "dep:schemars",
+  "near-sdk/abi",
+]
+arbitrary = [
+  "defuse-core/arbitrary",
+  "defuse-near-promise/arbitrary",
+  "dep:arbitrary",
+]
+contract = [
+  "defuse-near-promise/near-contract",
+  "dep:bitflags",
+  "dep:defuse-bitmap",
+  "dep:defuse-borsh-utils",
+  "dep:defuse-map-utils",
+  "dep:defuse-wnear",
+]
+imt = ["defuse-core/imt"]
+far = ["imt"]
+
+near-kit = ["defuse-core/near-kit", "defuse-near-promise/near-kit"]
+
+[dev-dependencies]
+defuse = { path = ".", features = ["abi"] }
+
+defuse-core = { workspace = true, features = ["arbitrary"] }
+defuse-randomness.workspace = true
+defuse-tests.workspace = true
+
+anyhow.workspace = true
+tokio = { workspace = true, features = ["macros"] }
+
+arbitrary.workspace = true
+futures.workspace = true
+itertools.workspace = true
+near-sdk = { workspace = true, features = ["non-contract-usage"] }
+proptest.workspace = true
+rstest.workspace = true
+
+[package.metadata.near.reproducible_build]
+image = "sourcescan/cargo-near:0.22.0-rust-1.97.1"
+image_digest = "sha256:7467038bdddc86484b73b416eeadce926ff59013e128e53dec5a19e1cb4b2234"
+passed_env = []
+container_build_command = [
+  "cargo",
+  "near",
+  "build",
+  "non-reproducible-wasm",
+  "--locked",
+  "--features=contract",
+  "--abi-features=abi,contract",
+]
+
+[package.metadata.near.reproducible_build.variant.far]
+image = "sourcescan/cargo-near:0.22.0-rust-1.97.1"
+image_digest = "sha256:7467038bdddc86484b73b416eeadce926ff59013e128e53dec5a19e1cb4b2234"
+passed_env = []
+container_build_command = [
+  "cargo",
+  "near",
+  "build",
+  "non-reproducible-wasm",
+  "--locked",
+  "--features=contract,far",
+  "--abi-features=abi,contract,far",
+]

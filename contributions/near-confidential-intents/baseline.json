@@ -1,0 +1,79 @@
+{
+  "fetchedAsOf": "2026-10-07",
+  "origin": "https://privacybenchmark.org",
+  "rubricVersion": "1.3.0",
+  "projects": [
+    {
+      "slug": "aztec",
+      "version": "alpha-v5",
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "913e2a4bda80f402d8422addf7837f0d6a43b8d5e5994e98b44c000b33a1340c",
+      "evaluatedAt": "2026-10-01T18:24:03.175Z",
+      "overall": 66.005
+    },
+    {
+      "slug": "canton-network",
+      "version": null,
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "694da6dc6bb32d1867a3eb6c3a89a9bf06d93d2ca45592fbe9e09d0552e7345a",
+      "evaluatedAt": "2026-10-02T04:05:06.681Z",
+      "overall": 36.13215384615385
+    },
+    {
+      "slug": "fhenix",
+      "version": "cofhe-testnet",
+      "releaseId": "ny3rsl6sd2v0rdxa",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/ny3rsl6sd2v0rdxa/export.json",
+      "snapshotHash": "6852ce59df6eb083b95db216b728162cb19eca3137bb996d4f4f172cd2a703ae",
+      "evaluatedAt": "2026-10-05T15:17:58.230Z",
+      "overall": 27.622999999999998
+    },
+    {
+      "slug": "miden",
+      "version": "testnet-v0.16",
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "83759eeb06d4eed6089dac58d3de24f0f2106c46b80b37b7fa8ca428bde25a50",
+      "evaluatedAt": "2026-10-01T23:32:29.922Z",
+      "overall": 36.64
+    },
+    {
+      "slug": "strk20",
+      "version": "Mainnet",
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "f4262f916eae98763e7409701f7e6443c90f43c361c4a54fa533f55e3a54f4f9",
+      "evaluatedAt": "2026-10-02T03:47:58.652Z",
+      "overall": 32.85584615384615
+    },
+    {
+      "slug": "tempo",
+      "version": "t11-zones-testnet",
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "cd71476f58d5a83cae47a1894eae0d1207d4e690d8d6c1ab83a350e72b3b6d94",
+      "evaluatedAt": "2026-10-02T01:13:23.584Z",
+      "overall": 21.861769230769234
+    },
+    {
+      "slug": "zama",
+      "version": "mainnet",
+      "releaseId": "erwts6yw8xgmv820",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/erwts6yw8xgmv820/export.json",
+      "snapshotHash": "17a32e71078e4000668e2806b87e288fe976c253fbad976e3f4ed9606bb8daee",
+      "evaluatedAt": "2026-10-01T20:11:12.209Z",
+      "overall": 38.178000000000004
+    },
+    {
+      "slug": "zksync-prividium",
+      "version": null,
+      "releaseId": "lbpl0gmwvtte4w7n",
+      "sourceUrl": "https://privacybenchmark.org/api/public/releases/lbpl0gmwvtte4w7n/export.json",
+      "snapshotHash": "173339fb8221005f47d2578b01141dde86566a5b1caf9e539d1ca0d67ad66e89",
+      "evaluatedAt": "2026-10-06T19:53:34.795Z",
+      "overall": 36.454
+    }
+  ]
+}

@@ -1,0 +1,1573 @@
+{
+  "project": "Near Confidential Intents",
+  "rubricVersion": "1.3.0",
+  "asOf": "2026-10-08",
+  "sources": 113,
+  "corpusFiles": 466,
+  "answered": 84,
+  "unknown": 21,
+  "notApplicable": 1,
+  "scores": {
+    "rubricVersion": "1.3.0",
+    "overall": 26.038,
+    "complete": true,
+    "level": "Z3",
+    "trustTier": null,
+    "walkaway": {
+      "passed": false,
+      "reasons": ["Exiting needs someone else's cooperation", "Users can't recover funds without the operator", "Spending needs a party other than the user"]
+    },
+    "suites": [
+      {
+        "suiteId": "coverage",
+        "score": 42.525,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "coverage.confidentiality",
+            "score": 86.5,
+            "uncapped": 86.5,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.confidentiality.amounts",
+                "status": "answered",
+                "optionId": "hidden",
+                "rawPoints": 35,
+                "points": 31.5,
+                "maxPoints": 35,
+                "multiplier": 0.9,
+                "rules": ["verifiability_multiplier"]
+              },
+              {
+                "criterionId": "coverage.confidentiality.balances",
+                "status": "answered",
+                "optionId": "hidden",
+                "rawPoints": 25,
+                "points": 25,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.confidentiality.asset",
+                "status": "answered",
+                "optionId": "hidden",
+                "rawPoints": 20,
+                "points": 20,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.confidentiality.boundary",
+                "status": "answered",
+                "optionId": "boundary-public",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.unlinkability",
+            "score": 63.5,
+            "uncapped": 63.5,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.unlinkability.sender",
+                "status": "answered",
+                "optionId": "hidden",
+                "rawPoints": 25,
+                "points": 22.5,
+                "maxPoints": 25,
+                "multiplier": 0.9,
+                "rules": ["verifiability_multiplier"]
+              },
+              {
+                "criterionId": "coverage.unlinkability.recipient",
+                "status": "answered",
+                "optionId": "hidden",
+                "rawPoints": 25,
+                "points": 22.5,
+                "maxPoints": 25,
+                "multiplier": 0.9,
+                "rules": ["verifiability_multiplier"]
+              },
+              {
+                "criterionId": "coverage.unlinkability.history",
+                "status": "answered",
+                "optionId": "linkable",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.unlinkability.public-apps",
+                "status": "answered",
+                "optionId": "anonymous",
+                "rawPoints": 15,
+                "points": 10.5,
+                "maxPoints": 15,
+                "multiplier": 0.7,
+                "rules": ["verifiability_multiplier"]
+              },
+              {
+                "criterionId": "coverage.unlinkability.fees",
+                "status": "answered",
+                "optionId": "optional-relayer",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.identity",
+            "score": 38,
+            "uncapped": 38,
+            "complete": true,
+            "unknownCount": 2,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.identity.persistent-id",
+                "status": "unknown",
+                "optionId": "public-address",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "coverage.identity.registration",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.identity.reusable-address",
+                "status": "unknown",
+                "optionId": "linkable",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "coverage.identity.identity-proofs",
+                "status": "answered",
+                "optionId": "apps",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.execution",
+            "score": 24,
+            "uncapped": 24,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.execution.private-state",
+                "status": "answered",
+                "optionId": "balances-only",
+                "rawPoints": 12,
+                "points": 12,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.execution.private-logic",
+                "status": "answered",
+                "optionId": "limited",
+                "rawPoints": 12,
+                "points": 12,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.execution.function-hiding",
+                "status": "unknown",
+                "optionId": "visible",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "coverage.execution.shared-state",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.callstack",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.callstack.targets",
+                "status": "answered",
+                "optionId": "visible",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.callstack.structure",
+                "status": "answered",
+                "optionId": "visible",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.callstack.public-boundary",
+                "status": "answered",
+                "optionId": "visible",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.metadata",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.metadata.network",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.metadata.reads",
+                "status": "answered",
+                "optionId": "rpc-sees",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.metadata.pending",
+                "status": "answered",
+                "optionId": "plaintext",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.metadata.fingerprinting",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "coverage.anonymity-set",
+            "score": 63,
+            "uncapped": 63,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "coverage.anonymity-set.structure",
+                "status": "answered",
+                "optionId": "shared",
+                "rawPoints": 25,
+                "points": 25,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.anonymity-set.default",
+                "status": "unknown",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "coverage.anonymity-set.usage",
+                "status": "answered",
+                "optionId": "large",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "coverage.anonymity-set.effective",
+                "status": "answered",
+                "optionId": "no-study",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "trust",
+        "score": 21.5,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "trust.decryption",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 3,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "trust.decryption.standing-access",
+                "status": "unknown",
+                "optionId": "operator",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "trust.decryption.infra-visibility",
+                "status": "unknown",
+                "optionId": "plaintext",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "trust.decryption.retroactive",
+                "status": "unknown",
+                "optionId": "yes",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              }
+            ]
+          },
+          {
+            "benchmarkId": "trust.disclosure",
+            "score": 80,
+            "uncapped": 80,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "trust.disclosure.selective",
+                "status": "answered",
+                "optionId": "apps",
+                "rawPoints": 20,
+                "points": 20,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "trust.disclosure.granularity",
+                "status": "answered",
+                "optionId": "fine",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "trust.disclosure.revocable",
+                "status": "answered",
+                "optionId": "yes",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "trust.crypto",
+            "score": 5,
+            "uncapped": 5,
+            "complete": true,
+            "unknownCount": 2,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "trust.crypto.setup",
+                "status": "answered",
+                "optionId": "no-proofs",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "trust.crypto.hardware",
+                "status": "unknown",
+                "optionId": "confidentiality",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "trust.crypto.post-quantum",
+                "status": "unknown",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "trust.crypto.formal-privacy",
+                "status": "answered",
+                "optionId": "de-facto",
+                "rawPoints": 5,
+                "points": 5,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "custody",
+        "score": 8.75,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "custody.self-custody",
+            "score": 20,
+            "uncapped": 20,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "custody.self-custody.spending",
+                "status": "answered",
+                "optionId": "federation",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.self-custody.backing",
+                "status": "answered",
+                "optionId": "committee-bridge",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.self-custody.recoverability",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "custody.pause",
+            "score": 7.000000000000001,
+            "uncapped": 7.000000000000001,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "custody.pause.pause-fn",
+                "status": "answered",
+                "optionId": "any-single",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.pause.halt",
+                "status": "unknown",
+                "optionId": "yes",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "custody.pause.exits-during-pause",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.pause.track-record",
+                "status": "answered",
+                "optionId": "one",
+                "rawPoints": 7,
+                "points": 7,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "custody.freeze",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "custody.freeze.blocklist",
+                "status": "answered",
+                "optionId": "protocol-wide",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.freeze.seizure",
+                "status": "answered",
+                "optionId": "admin",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.freeze.systemic",
+                "status": "answered",
+                "optionId": "yes",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "custody.exit",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "custody.exit.unilateral",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 45,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.exit.window",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.exit.gatekeeper",
+                "status": "answered",
+                "optionId": "can-refuse",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "custody.access",
+            "score": 30,
+            "uncapped": 30,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "custody.access.entry",
+                "status": "answered",
+                "optionId": "screened",
+                "rawPoints": 20,
+                "points": 20,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.access.private-exit",
+                "status": "answered",
+                "optionId": "gate",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "custody.access.screening",
+                "status": "answered",
+                "optionId": "address-screening",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "programmability",
+        "score": 26.1,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "programmability.contracts",
+            "score": 38,
+            "uncapped": 38,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.contracts.model",
+                "status": "answered",
+                "optionId": "fixed",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.contracts.deployment",
+                "status": "answered",
+                "optionId": "allowlisted",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.contracts.standards",
+                "status": "answered",
+                "optionId": "emerging",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.contracts.accounts",
+                "status": "answered",
+                "optionId": "contracts",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "programmability.composability",
+            "score": 20,
+            "uncapped": 20,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.composability.private-private",
+                "status": "unknown",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "programmability.composability.private-public",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.composability.liquidity",
+                "status": "answered",
+                "optionId": "adapters",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.composability.cross-domain",
+                "status": "answered",
+                "optionId": "public-legs",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "programmability.blending",
+            "score": 30,
+            "uncapped": 30,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.blending.granularity",
+                "status": "answered",
+                "optionId": "per-contract",
+                "rawPoints": 15,
+                "points": 15,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.blending.private-reads",
+                "status": "unknown",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "programmability.blending.crossing",
+                "status": "answered",
+                "optionId": "steps",
+                "rawPoints": 15,
+                "points": 15,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "programmability.disclosure",
+            "score": 25,
+            "uncapped": 25,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.disclosure.primitives",
+                "status": "answered",
+                "optionId": "limited",
+                "rawPoints": 15,
+                "points": 15,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.disclosure.compliance-proofs",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.disclosure.verifiable",
+                "status": "answered",
+                "optionId": "plaintext",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "programmability.developer",
+            "score": 50,
+            "uncapped": 50,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.developer.toolchain",
+                "status": "answered",
+                "optionId": "experimental",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.developer.local-dev",
+                "status": "answered",
+                "optionId": "partial",
+                "rawPoints": 12,
+                "points": 12,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.developer.sdks",
+                "status": "answered",
+                "optionId": "one",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.developer.familiarity",
+                "status": "answered",
+                "optionId": "mainstream",
+                "rawPoints": 20,
+                "points": 20,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "programmability.performance",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "programmability.performance.proving-time",
+                "status": "not_applicable",
+                "optionId": null,
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 0,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.performance.throughput",
+                "status": "answered",
+                "optionId": "low",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "programmability.performance.cost",
+                "status": "unknown",
+                "optionId": "high",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "governance",
+        "score": 8.45,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "governance.upgrades",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "governance.upgrades.upgradeability",
+                "status": "answered",
+                "optionId": "instant",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "governance.upgrades.emergency",
+                "status": "answered",
+                "optionId": "single",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "governance.upgrades.verifier",
+                "status": "unknown",
+                "optionId": "unrestricted",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              }
+            ]
+          },
+          {
+            "benchmarkId": "governance.roles",
+            "score": 17,
+            "uncapped": 17,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "governance.roles.scope",
+                "status": "answered",
+                "optionId": "funds-or-privacy",
+                "rawPoints": 5,
+                "points": 5,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "governance.roles.holders",
+                "status": "answered",
+                "optionId": "single",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 35,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "governance.roles.transparency",
+                "status": "answered",
+                "optionId": "partial",
+                "rawPoints": 12,
+                "points": 12,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "governance.process",
+            "score": 10,
+            "uncapped": 10,
+            "complete": true,
+            "unknownCount": 2,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "governance.process.control",
+                "status": "unknown",
+                "optionId": "company",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "governance.process.public-process",
+                "status": "unknown",
+                "optionId": "opaque",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "governance.process.concentration",
+                "status": "answered",
+                "optionId": "unclear",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "decentralization",
+        "score": 26.4,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "decentralization.operators",
+            "score": 16,
+            "uncapped": 16,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "decentralization.operators.producers",
+                "status": "answered",
+                "optionId": "permissioned-few",
+                "rawPoints": 6,
+                "points": 6,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "decentralization.operators.entry",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "decentralization.operators.concentration",
+                "status": "answered",
+                "optionId": "unclear",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "decentralization.censorship",
+            "score": 0,
+            "uncapped": 0,
+            "complete": true,
+            "unknownCount": 3,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "decentralization.censorship.forced-inclusion",
+                "status": "unknown",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "decentralization.censorship.observed",
+                "status": "unknown",
+                "optionId": "high",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "decentralization.censorship.indistinguishable",
+                "status": "unknown",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              }
+            ]
+          },
+          {
+            "benchmarkId": "decentralization.proving",
+            "score": 38,
+            "uncapped": 38,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "decentralization.proving.client-side",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "decentralization.proving.provers",
+                "status": "answered",
+                "optionId": "permissionless",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "decentralization.proving.verification",
+                "status": "answered",
+                "optionId": "committee",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "decentralization.settlement",
+            "score": 70,
+            "uncapped": 70,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "decentralization.settlement.settlement",
+                "status": "answered",
+                "optionId": "committee",
+                "rawPoints": 20,
+                "points": 20,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "decentralization.settlement.data",
+                "status": "answered",
+                "optionId": "onchain",
+                "rawPoints": 50,
+                "points": 50,
+                "maxPoints": 50,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "suiteId": "security",
+        "score": 42,
+        "complete": true,
+        "rules": [],
+        "benchmarks": [
+          {
+            "benchmarkId": "security.soundness",
+            "score": 45,
+            "uncapped": 45,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "security.soundness.open-critical",
+                "status": "unknown",
+                "optionId": "unpatched",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              },
+              {
+                "criterionId": "security.soundness.history",
+                "status": "answered",
+                "optionId": "one",
+                "rawPoints": 15,
+                "points": 15,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.soundness.defense-in-depth",
+                "status": "answered",
+                "optionId": "several",
+                "rawPoints": 30,
+                "points": 30,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "security.assurance",
+            "score": 30,
+            "uncapped": 30,
+            "complete": true,
+            "unknownCount": 0,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "security.assurance.open-source",
+                "status": "answered",
+                "optionId": "partial",
+                "rawPoints": 12,
+                "points": 12,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.assurance.reproducibility",
+                "status": "answered",
+                "optionId": "partial",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 20,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.assurance.audits",
+                "status": "answered",
+                "optionId": "none",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 25,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.assurance.formal-verification",
+                "status": "answered",
+                "optionId": "no",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.assurance.bounty",
+                "status": "answered",
+                "optionId": "smaller",
+                "rawPoints": 8,
+                "points": 8,
+                "maxPoints": 15,
+                "multiplier": 1,
+                "rules": []
+              }
+            ]
+          },
+          {
+            "benchmarkId": "security.maturity",
+            "score": 50,
+            "uncapped": 50,
+            "complete": true,
+            "unknownCount": 1,
+            "notResearchedCount": 0,
+            "rules": [],
+            "criteria": [
+              {
+                "criterionId": "security.maturity.status",
+                "status": "answered",
+                "optionId": "mainnet",
+                "rawPoints": 40,
+                "points": 40,
+                "maxPoints": 40,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.maturity.age",
+                "status": "answered",
+                "optionId": "3m",
+                "rawPoints": 10,
+                "points": 10,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": []
+              },
+              {
+                "criterionId": "security.maturity.continuity",
+                "status": "unknown",
+                "optionId": "repeatedly",
+                "rawPoints": 0,
+                "points": 0,
+                "maxPoints": 30,
+                "multiplier": 1,
+                "rules": ["unknown_lowest"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "coverage": {
+    "covered": 105,
+    "total": 106,
+    "ratio": 0.9905660377358491,
+    "suites": [
+      {
+        "suiteId": "coverage",
+        "covered": 28,
+        "total": 28
+      },
+      {
+        "suiteId": "trust",
+        "covered": 10,
+        "total": 10
+      },
+      {
+        "suiteId": "custody",
+        "covered": 16,
+        "total": 16
+      },
+      {
+        "suiteId": "programmability",
+        "covered": 20,
+        "total": 21
+      },
+      {
+        "suiteId": "governance",
+        "covered": 9,
+        "total": 9
+      },
+      {
+        "suiteId": "decentralization",
+        "covered": 11,
+        "total": 11
+      },
+      {
+        "suiteId": "security",
+        "covered": 11,
+        "total": 11
+      }
+    ],
+    "notResearched": 0,
+    "badgeGaps": [],
+    "blocker": null
+  },
+  "absenceChecks": [
+    {
+      "criterionId": "security.assurance.formal-verification",
+      "scope": "code",
+      "patterns": [
+        "certora",
+        "coq",
+        "isabelle",
+        "formal verification",
+        "formally verified",
+        "machine-checked",
+        "halmos",
+        "kani::proof",
+        "#[kani",
+        "creusot",
+        "prusti",
+        "verus",
+        "lean4",
+        "smtchecker",
+        "tla+"
+      ],
+      "files": 516,
+      "manifestHash": "f779827c596e1c9eabc815b292963838866fe93815453281c20228b5c95027bd",
+      "matches": 0
+    }
+  ],
+  "note": "Offline validation only. Quotes/hashes/scoring verified; source truth and the scoped interpretations require editorial judgment. No model, database import or publication.",
+  "checks": {
+    "originalScoresUnchanged": true,
+    "mainDiffChangesServerOrRubric": false,
+    "fullTestAllPassed": true,
+    "unitTests": 510,
+    "browserTests": 55,
+    "validatorTypecheckPassed": true,
+    "corruptArchiveRejected": true,
+    "inventedQuoteRejected": true,
+    "originalClientSyntaxPairs": 5,
+    "archivedClientExecuted": false,
+    "baselineSnapshotsDeepEqual": 8,
+    "localPreviewNormalGates": true,
+    "localPngCardStatus": 200,
+    "authorApprovalObtained": false,
+    "scope": "Technical pre-submission checks against current upstream; not an editorial approval",
+    "upstreamBase": "0521a0310149290a6bfff7ebc3e5a0339f477e5d",
+    "existingProjectSnapshotsCheckedAgain": true,
+    "existingProjectSnapshotCount": 8,
+    "sourceOriginalCapturesChecked": 8
+  }
+}

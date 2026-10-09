@@ -1,0 +1,58 @@
+{
+  "tool": "esbuild 0.28.2",
+  "options": {
+    "loader": "js",
+    "minifyWhitespace": true,
+    "minifySyntax": true,
+    "legalComments": "none",
+    "charset": "utf8"
+  },
+  "archivedCodeExecuted": false,
+  "results": [
+    {
+      "sourceId": "round7-client-proof",
+      "rawFile": "sources/round7-client-proof.raw.md",
+      "formattedFile": "sources/round7-client-proof.md",
+      "rawHash": "ff74c2b5dc919e1ff979c52c03510fb520885784dc03aba54a8add9c77253e54",
+      "formattedHash": "65cfc85b71277eb40b31b68f4dc6e698d89a6ac543a5d8abe6afab0fd3865681",
+      "syntaxHash": "803952851a4898c3553c4ab546d8d381c904ef987d2ce4da5ecb7fa0da4e285e",
+      "syntaxEqual": true
+    },
+    {
+      "sourceId": "round7-client-earn",
+      "rawFile": "sources/round7-client-earn.raw.md",
+      "formattedFile": "sources/round7-client-earn.md",
+      "rawHash": "ce1ac1131ed269f2cc9600759d17d22f210d20901f82183e3cfaa2a2cf65a7a5",
+      "formattedHash": "4a58da302d831cf026c84de9cffab546ee38347d3f1b2e5483cb6f8ebc4f49c4",
+      "syntaxHash": "f04009c7d0f6f97e5636901bfef105c79aa045a2b800cff4a95406061ff95c9a",
+      "syntaxEqual": true
+    },
+    {
+      "sourceId": "round7-client-earn-balances",
+      "rawFile": "sources/round7-client-earn-balances.raw.md",
+      "formattedFile": "sources/round7-client-earn-balances.md",
+      "rawHash": "c597ac4d0908fb2aaae6e6deba578960638607a784235749d23b9dd1ef9c824b",
+      "formattedHash": "140f14a8e7fa879155726342fe0b5921587fa77e56f0dd9cced4457c7cd5d987",
+      "syntaxHash": "3df14752a0f204f0b766b65b13fd6d690be0a20f53a69186e52c0f8c9520e2b3",
+      "syntaxEqual": true
+    },
+    {
+      "sourceId": "round7-client-earn-quote",
+      "rawFile": "sources/round7-client-earn-quote.raw.md",
+      "formattedFile": "sources/round7-client-earn-quote.md",
+      "rawHash": "03bb3d48345b068efc260a9153d882c64cfbeafe9aa4715352f92f08042a2c52",
+      "formattedHash": "a179a96f7b2288d16d266776c6d72f818000b5b7411eb350c00949f09054d852",
+      "syntaxHash": "70a65345daa93b880540ae25bf4d8cf0e95f9e432f481b6fc6354196a64734db",
+      "syntaxEqual": true
+    },
+    {
+      "sourceId": "round7-client-migration",
+      "rawFile": "sources/round7-client-migration.raw.md",
+      "formattedFile": "sources/round7-client-migration.md",
+      "rawHash": "39a0daf22dbc499fa74289886d5be1589d9fd3fe337654a704187b30bd7a95d6",
+      "formattedHash": "77f390f26b7263cf988c14f13ffdf8616f52b61548dfb4e0a840f5d6509e310b",
+      "syntaxHash": "e4eb42c7d3c22a4da3850c23e338eee0b255e9e3b355a332d1898e4286e94497",
+      "syntaxEqual": true
+    }
+  ]
+}

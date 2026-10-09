@@ -1,0 +1,63 @@
+{
+  "criterionId": "decentralization.operators.producers",
+  "question": "How many independent block producers or sequencers are there?",
+  "guidance": "Count independent operators, not keys.",
+  "currentOption": "permissioned-few",
+  "recommendation": "Сохранить permissioned-few как vendor-claimed configuration с marketing decisive evidence; не объявлять независимость проверенной. Исправить attribution independence из official architecture на official product page.",
+  "evidence": [
+    {
+      "sourceId": "round8-validator-date",
+      "quote": "The NEAR private shard is operated by seven permissioned validators and connected to NEAR mainnet via a TEE-based bridge.",
+      "sourceClass": "marketing",
+      "scope": "evaluated",
+      "date": "2026-08-17",
+      "exactLocalQuoteMatch": true
+    },
+    {
+      "sourceId": "coverage-product",
+      "quote": "Confidential Intents runs on a dedicated NEAR private shard, operated by a decentralized set of independent permissioned validators.",
+      "sourceClass": "marketing",
+      "scope": "evaluated",
+      "date": null,
+      "exactLocalQuoteMatch": true
+    },
+    {
+      "sourceId": "trust-blockchain",
+      "quote": "The NEAR private shard is operated by seven permissioned validators and connected to NEAR mainnet via a TEE-based bridge. Private Shard is the foundation for Confidential Intents.",
+      "sourceClass": "marketing",
+      "scope": "evaluated",
+      "date": null,
+      "exactLocalQuoteMatch": true
+    },
+    {
+      "sourceId": "coverage-product",
+      "quote": "Confidential Intents runs on a dedicated NEAR private shard, operated by a decentralized set of independent permissioned validators. A TEE-based bridge connects the private shard to NEAR mainnet.",
+      "sourceClass": "marketing",
+      "scope": "evaluated",
+      "date": null,
+      "exactLocalQuoteMatch": true
+    },
+    {
+      "sourceId": "round4-node-monster",
+      "quote": "Validators may be able to see plaintext depending on the execution path",
+      "sourceClass": "marketing",
+      "scope": "context",
+      "date": "2026-02-25",
+      "exactLocalQuoteMatch": true
+    }
+  ],
+  "reason": "Одно count statement само по себе не хватало бы: seven validators не равно seven operators. Но текущий пакет отдельно содержит прямое applicable statement, что тот же private shard operated by a decentralized set of independent permissioned validators. Это не вывод из числа ключей. Оба исходника — marketing; по рубрике они слабее технических, но не запрещены, и сохранённого противоположного текущего утверждения о single operator нет. Независимая проверка владельцев не отдельное обязательное условие этого критерия.",
+  "peerDistinction": {
+    "tempo": "single: docs explicitly one operator active leader despite multiple signing/replica nodes; actual technical contradiction to plurality.",
+    "strk20": "single: Starknet multiple sequencers explicitly all operated by StarkWare; process redundancy not independence."
+  },
+  "nodeMonster": "Исторический Phase0 participant source датирован Feb25 и scope=context. Не establishes текущую October membership; не использовать для текущего count либо независимости.",
+  "limits": [
+    "Не установлены current operator roster, ownership и voting weights.",
+    "Публикуемый результат — заявление разработчика о нескольких независимых validator operators, а не independently verified count.",
+    "Если редактор не принимает объединение count и qualitative independence заявления одного publisher, разумен unknown; нельзя утверждать, что отсутствие roster само доказывает one operator."
+  ],
+  "textCorrection": "Current rationale The official architecture describes an independent permissioned set incorrectly attributes this to architecture: the cited independence quote is the marketing product page coverage-product.",
+  "editorialDecision": true,
+  "establishedOptionMismatch": false
+}

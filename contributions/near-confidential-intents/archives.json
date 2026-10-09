@@ -1,0 +1,16 @@
+[
+  {
+    "file": "corpus.json.gz",
+    "entries": 466,
+    "format": "gzip-compressed JSON array of file/contentMd entries",
+    "contentHash": "04e273be522cd572ca64a7f794b5f8b6d13b78f7f3cf6ec1ba9679a41d16b503",
+    "uncompressedHash": "c2c3279e151391f8c0f754f365a42b50f650fe0e91e09c9587b59cad856733ed"
+  },
+  {
+    "file": "supporting-sources.json.gz",
+    "entries": 52,
+    "format": "gzip-compressed JSON array of file/contentMd entries",
+    "contentHash": "bbb8a7babb1958a40e2d0049090166e6962b37920e357f9e943c75c3a1164b07",
+    "uncompressedHash": "3d8d6a797e1ec1dd3979d221efec1b14af341e9af373c73f4f16aa55a66601d0"
+  }
+]

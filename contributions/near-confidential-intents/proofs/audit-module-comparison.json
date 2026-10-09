@@ -1,0 +1,521 @@
+{
+  "auditor": "Guvenkaya",
+  "auditedRef": "6da9e2b3ab598f277d45fb356aee01a5d80ac0a6",
+  "currentDeployedPublicRef": "a2dd140892b68140bf7e70814604d3ba074d656c",
+  "comparison": "Byte-exact content hashes across old scope and all current Rust files; no semantic equivalence assumed",
+  "scopePathsExtracted": 103,
+  "items": [
+    {
+      "oldPath": "admin-utils/src/lib.rs",
+      "sha256": "5ada5225423d2b285d32b508fb034692150a63e2ff84eef2c927371aa47a0639",
+      "unchangedCurrentPaths": ["crates/near/admin-utils/src/lib.rs"]
+    },
+    {
+      "oldPath": "admin-utils/src/full_access_keys.rs",
+      "sha256": "58c1cc3a4797841e921833cc3773939abf16f2e86f379a2909554f01d6f078b4",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "bitmap/src/lib.rs",
+      "sha256": "45435cc0ee0d342829b59d2c006566406466cc4f0b9d9a8be574cbf89da3e6a4",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "borsh-utils/src/lib.rs",
+      "sha256": "ff2014e8cc6eab44e1e7dec3e808bbe5a37c7056a078a672aa677ab0d48a5847",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "borsh-utils/src/base64.rs",
+      "sha256": "f728d1d64c3b1c7e8c87a1c51d497e6fa37c05a964ff93676e6952badc0beb96",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "borsh-utils/src/string.rs",
+      "sha256": "956ebb25657035ada0e060812179514f0ef4d984c0a49c4d656f0819f1b4e2c1",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "controller/src/lib.rs",
+      "sha256": "7fbf691c2482f6068f4dbd06ac7e4a1149ac3ce4c370498e53576616b8a62e65",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/lib.rs",
+      "sha256": "9118f0a06bc443550ebaee3cf480d7c49802c2deb76c8873e4a87aae24c9dd55",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/accounts.rs",
+      "sha256": "9c00acc9b60e788234dbd4a8f799718ecdc3e3705a2949e901ccc8ce791a075a",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/deadline.rs",
+      "sha256": "d9fc0edf9123d76dde331bc57fce7eb48709906a84456c36f7f60cf48303a7df",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/engine/mod.rs",
+      "sha256": "d3f9390597acf3c81ea9fbdfdf99b0044a52513f5da3283924aebc26251e7a39",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/engine/inspector.rs",
+      "sha256": "bab208215936c5da1f03a14cd171e4a0c0186d9a1e67840164c9bfee881a4aba",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/engine/state/mod.rs",
+      "sha256": "a16bdbd622233cd7c546a67ecc4c1e3209c539af121276028d0dd4dbcbeada2c",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/engine/state/cached.rs",
+      "sha256": "e89976bf803f521b651d374e487551dc48441c55d8060b40ba234f145a19a09e",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/engine/state/deltas.rs",
+      "sha256": "7a1fb1ea7050864ed3b8db72b0129406ba32a9326629b937920b0ee270139f3e",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/error.rs",
+      "sha256": "cfc8ab46f626f5c0e9346aca2c06711c7b5bbcd7c91729f8c878b73fa4e83410",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/events.rs",
+      "sha256": "42fa0251506c25a7cc73b81752d45b8c93f9514e8b873669fdb077e35a0dafd9",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/fees.rs",
+      "sha256": "cb07ecfd48b2534e31d588dc291d1264a1ec0355b1a8da009154953011086dba",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/intents/mod.rs",
+      "sha256": "538333b4586b74f3832056d6575e9eec9450852bb01a26e0d4bff2f1d5cbeb2c",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/intents/account.rs",
+      "sha256": "addf4e39797e4e06c92277b9054877011aa5b2b2a467dfeef2641f25dca043dd",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/intents/token_di.rs",
+      "note": "PDF extraction path did not match archive"
+    },
+    {
+      "oldPath": "core/src/intents/tokens.rs",
+      "sha256": "5457cead13e2cba48e70ba0f225932a9d7a52fa9d1cff6a18e90b4022e5ca1a7",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/nonce.rs",
+      "sha256": "1caf825211df414a5477c1f02f08225763554c33daa34cfa12e5db55638da47e",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/mod.rs",
+      "sha256": "e11e750675099c095950cfce85864f232a8bb2043a3bd4809bd0e0c180c2416c",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/erc191.rs",
+      "sha256": "0bad1b941cf85dbe5a3b70209928804d018388d400e765243e1e8150d4841c38",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/multi.rs",
+      "sha256": "845d5391e4174ee47101214a8d6cb79d6a3946e864c139f1ee65e04a40412c77",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/nep413.rs",
+      "sha256": "2e7800fedd7ec9aba6f48b27823ee4124dfbbefb369bcd0363739faa69769769",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/raw.rs",
+      "sha256": "1d26a77c45a39f09a5ba5e3153eb9433ab85efbeeeea5980fb01793a95c70c87",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/payload/webauthn.rs",
+      "sha256": "02b8cc97fa040ef4bff58019fb84eb07b5f49adc0bc8f84be854f3056f05f4fb",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "core/src/tokens.rs",
+      "sha256": "f187cbd14492831a88f62144e144d630dd2c337495d4a2f6435d495bb18ac4d6",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/lib.rs",
+      "sha256": "6b0ed4fd9e5177856d441d07de20a8ed5464ecc5ab9fd4101674bd18cdc4fb90",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/curve/mod.rs",
+      "sha256": "0517f977954fcdbe0788bc07edcbdbc988ca4b9cbb1537067bd689db68b93609",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/curve/ed25519.rs",
+      "sha256": "eef47968653d444e82dfd30adaeed2eba7b33c99d42e185d14bf24651f0ca3c7",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/curve/p256.rs",
+      "sha256": "5fc64bf3e6565e6e4c09bdbf08f03750f31a98a2739c47fe1696db51c15ebe7d",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/curve/secp256k1.rs",
+      "sha256": "b14a7a829a794d7eddcb7e1b021eb2fa477687c14de8567989d27d05b443d96b",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/payload.rs",
+      "sha256": "dc011ff5ac7370827227656158ee0f6750c1a9b4890eb374f334b1a0e12baa8c",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/public_key.rs",
+      "sha256": "b239fe8e15148e8609925a0d098c2a633a4da723be93afdf70f446a49ac52d04",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/serde/mod.rs",
+      "sha256": "270084cd263c8d406bc44673c4c66bbcf712143db38a8c71b9fa01361dc8bef2",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/serde/curve.rs",
+      "sha256": "daf0359c49f87abf7bb3bafc15cf206df5d798274be031b2af223776e7b839ed",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "crypto/src/signature.rs",
+      "sha256": "7ae735fc723fd00bfb608c9c22c5090c7083d5c0e8da6fe42154aa01fdb168e3",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/lib.rs",
+      "sha256": "2f19a72356e9a17690e9b957d1e530d39110c852d548ddb2347c18020acf42df",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/accounts.rs",
+      "sha256": "d6a33ee9fd6c641fddcb317746588a3d3b0f1e94e2f192e53eae99a6b9edaf7a",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/mod.rs",
+      "sha256": "c189117d4a657aec090a4921736d0aca703047e703f115f94e45f2f583177162",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/abi.rs",
+      "sha256": "148a8576525144019bcda64aef3fb13e72b6d145416c4b636b98223475c810a1",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/accounts/mod.rs",
+      "sha256": "042b85b304cb826bba973c29dac66a0696ebf3bc0842cd31f72378254f9f7db0",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/accounts/account.rs",
+      "sha256": "227be8dec56041e86b95048d4be13642adb2c31d3b8420545b755e8868a5842f",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/accounts/state.rs",
+      "sha256": "4efc2f0a3e7eecc6bbc3e8ed84f24022403b06b0f41ab393e1f546900bf74482",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/admin.rs",
+      "sha256": "dadd99a982f3b7ee26d19e01b17bf1bace49058ae6d7242aba7078e92419b742",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/cong.rs",
+      "note": "PDF extraction path did not match archive"
+    },
+    {
+      "oldPath": "defuse/src/contract/events.rs",
+      "sha256": "5ca2b469c6791aaf92f48814de0097aee5f74c337b02065f2ed95c961ce734cf",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/fees.rs",
+      "sha256": "98c877d80bdd1fd6ac5f0ca60b19f5b9f226de908a2fcc6e4fd147512b4784d4",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/intents/mod.rs",
+      "sha256": "cce13c2b0ff83e197d7e340122be484f10ebb22320e838fc0a66bc5e063602d3",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/intents/execute.rs",
+      "sha256": "86dc78c5e6f2bb0868f41d770b2899c1f08bf916a0a7c1a9838f722632f55be6",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/intents/relayer.rs",
+      "sha256": "eb13b1d62e43a2c053f6fe4fdb4c24d8f3c9e487af8021948283afdf7b15d3cc",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/intents/simulate.rs",
+      "sha256": "b3d391402b0c40ffae93e43e91248443c7bc9f34f5ca6a4e8ee1e99736c05096",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/intents/state.rs",
+      "sha256": "b05356e84447ef4a3b50d08491b8b3cad15a4bf9afb9a06ad8ceb2c2b86a3913",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/state.rs",
+      "sha256": "b83fde92fff4da1f5b17f6c9956c7c1f2417cfc22c423f2ec99716f0321f319b",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/mod.rs",
+      "sha256": "ec81a658bcd40fb26c49087e5e776ca437665358a269c58973b65c90bc60acd0",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep141/mod.rs",
+      "sha256": "a0e74e11d30de9da0e98b24135233e4b20c3c4bd8f41e67608b2b30a538b3c00",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep141/deposit.rs",
+      "sha256": "246e4a903b40c1ff35070610f20133af663598cbfa2feecdaf0d923d009f35dd",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep141/native.rs",
+      "sha256": "60d850f6217a34ff52d42c8867cb44897002e8896a712b4dc8fad53b7eae7191",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep141/withdraw.rs",
+      "sha256": "aae75e36d2894c0d0592ae54af962b8037466d199f705d20507210e074974573",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep171/mod.rs",
+      "sha256": "5e7d8b6f37779d00cd283cbf92250be66fc3496adec899e837d85067773a0482",
+      "unchangedCurrentPaths": ["contracts/defuse/src/contract/tokens/nep171/mod.rs"]
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep171/deposit.rs",
+      "sha256": "d738b4e07ade2de20135eb0596bb3aedb0959f437006fdff0939ce41db23283f",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep171/withdraw.rs",
+      "sha256": "b728a0940ed949b03fd5be8c5d14cfe6921d52bae39ea962f33f424bc41335cd",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep245/mod.rs",
+      "sha256": "23f8c4dfad5f3a12eb18a4dc67b2e62dc35efe65a878baf111511fd38a525c57",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep245/core.rs",
+      "sha256": "f09ca07b4333a8796de3f68edc3daff2a64bfcb70c1f1005be71ac81dedfca75",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep245/deposit.rs",
+      "sha256": "83f5cddefe5e11b3f5d29417c9a4417de84d8182c4785c86e537094b59785258",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep245/resolver.rs",
+      "sha256": "262e426c24c6287bf2d8b22beffc0ffd5757f70438c31dc05a1b741dc3b2c345",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/tokens/nep245/withdraw.rs",
+      "sha256": "f4acfb06ec02c9a8940d3cb0eb3d8f142316eb3e5704c2cae4f795e3db7c6c2d",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/contract/upgrade.rs",
+      "sha256": "0dd331e332d7b609b7f5b78b050df5ae5477db07859222db899f114dd3a00418",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/fees.rs",
+      "sha256": "23b457687b704adedefa4f917796da0df67e58c2f4a9ca55572ffe4613ca3b94",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/intents.rs",
+      "sha256": "4428589885e65c00fe93746bc6243cb170f5597c9fbbd955f2c5a4620628c415",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/tokens/mod.rs",
+      "sha256": "d4dcc07e1dcf796581ba2885aca2027af154518556e42073135559f9c6be4854",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/tokens/nep141.rs",
+      "sha256": "0e69b46d58ab72f9db96c000e4b9f29df319537757268550b569ceab93828065",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/tokens/nep171.rs",
+      "sha256": "44148074a905e321f2b7c4846d6063586bdec743c6b3af6851c65bc7f84a4a9f",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "defuse/src/tokens/nep245.rs",
+      "sha256": "2e5e402c012cad658b44dec33d72a2471474a752c60e15ae4d5dc0242fdef93a",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "erc191/src/lib.rs",
+      "sha256": "6b5261f53f074db77838a92efd34fe4014b450bbf777f17bbf4e916360c009b5",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "map-utils/src/lib.rs",
+      "sha256": "1d9329bb799cbf785f5ea6a9fe41ff4bd46c67fbba0d6315c155643021059345",
+      "unchangedCurrentPaths": ["crates/map-utils/src/lib.rs"]
+    },
+    {
+      "oldPath": "map-utils/src/btree_map.rs",
+      "sha256": "c5c661a80238763ea87d25ab3e9f89870368a7616e4da19190d3d31338352ee7",
+      "unchangedCurrentPaths": ["crates/map-utils/src/btree_map.rs"]
+    },
+    {
+      "oldPath": "map-utils/src/cleanup.rs",
+      "sha256": "6854606b5cfb63bc92252c4336b97a8996678e21af9e36f751391dd693436d16",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "map-utils/src/hash_map.rs",
+      "sha256": "fd0065f2346ec15b1adec601c5d6604342bf9273c94bfcf892f31cf1fcbc9c02",
+      "unchangedCurrentPaths": ["crates/map-utils/src/hash_map.rs"]
+    },
+    {
+      "oldPath": "map-utils/src/iter.rs",
+      "sha256": "0a462dedda1e9e223f48bedc1bdb9bc5a00921bb12884151547fc17e811cd022",
+      "unchangedCurrentPaths": ["crates/map-utils/src/iter.rs"]
+    },
+    {
+      "oldPath": "map-utils/src/near.rs",
+      "sha256": "2c37fc80f09d3f5a7d26a8461e57a38b1ea3ea96b48b84574f3aa4fa54ad963f",
+      "unchangedCurrentPaths": ["crates/map-utils/src/near.rs"]
+    },
+    {
+      "oldPath": "near-utils/src/lib.rs",
+      "sha256": "dbabf226d6e5ae7e752d5a345775a531fcb7d790dd1f8a8f4d646eb80253dbc7",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "near-utils/src/cache.rs",
+      "sha256": "85d86edfdb3dd6f8dfe671bfd4656ce48497bf133b83d3332624fafe3f590bee",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "near-utils/src/gas.rs",
+      "sha256": "049fcd66214904cc931ec2d252eb3ccca6fa5eff8d36cc177bc1f83773a8d25e",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "near-utils/src/panic.rs",
+      "sha256": "620ba108238d0f00f45b9ffc6a820ccf7d250156e8a5dd42009a6ec70ea007b1",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "near-utils/src/prex.rs",
+      "note": "PDF extraction path did not match archive"
+    },
+    {
+      "oldPath": "nep245/src/lib.rs",
+      "sha256": "b9f0d5cb3ec119da4ee41cdc24a440d29d7b5664be80ada4a2a5dbf584062414",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep245/src/core.rs",
+      "sha256": "0883f18efd10293ee3ce4fbfcfcd47fd12a4e7fbb5f8cdf573f3a8da672e99ba",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep245/src/events.rs",
+      "sha256": "386e1d42b011fa6ac09ed4650257976eac7626df7e80a543a9b251e2168f691a",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep245/src/receiver.rs",
+      "sha256": "875c921383cca726c81d870c6f52e697a660bf5f078255866ae14ef4c669d05d",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep245/src/resolver.rs",
+      "sha256": "a7dd58bee05e78efe64d720eff31a807a2cb322831bcb2d0690f1c8ea6a4f8c3",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep245/src/token.rs",
+      "sha256": "b801b336510a0231b6a0fce14069e0f4acd4aa3136d54ce47bc4c38c70a072c9",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep413/src/lib.rs",
+      "sha256": "75be1de503eeb73823dba2eca9d0dd711981ee4904dac0caf3fe979d723d954e",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "nep461/src/lib.rs",
+      "sha256": "e3133611178d8774cd71c41cb73ca9343d27d13a4cb26a8612e8158dd3a6980c",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "num-utils/src/lib.rs",
+      "sha256": "19b89bbefbdf92b504e54093d5d4bc7f59ae2ee9a8c42e59ed3ddee44aa5d825",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "serde-utils/src/lib.rs",
+      "sha256": "35fcb2b0953b91ae44724e8ea48f9462ca1fc9f0793307645340961435bf34cd",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "serde-utils/src/base58.rs",
+      "sha256": "bdeebb9cde392220781b7eb5849a55d034ada145c8a06eb06279d8d3a215b008",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "serde-utils/src/base64.rs",
+      "sha256": "8da17ffd129423089138f444e65a211aa82e2e56f7f9bf3c5d9e37a86da9c286",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "webauthn/src/lib.rs",
+      "sha256": "d917d29d993da8b3316510a30c0ecb1936846d8c0d946c9257c7f753ec8d6fe1",
+      "unchangedCurrentPaths": []
+    },
+    {
+      "oldPath": "wnear/src/lib.rs",
+      "sha256": "f95145c4dde98b8f35a7bfe2aa1acd24d537df35ae27ae41c7d0038587166e63",
+      "unchangedCurrentPaths": []
+    }
+  ]
+}

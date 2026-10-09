@@ -1,0 +1,594 @@
+{
+  "asOf": "2026-10-08",
+  "rubricVersion": "1.3.0",
+  "unknownCount": 21,
+  "policy": "Unknown records absence of sufficient reviewed evidence, not absence of the property. Contributors may supply public dated/version-scoped evidence; ordinary verification and original scoring still apply.",
+  "gaps": [
+    {
+      "criterionId": "coverage.identity.persistent-id",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Public boundary transfers expose source/destination addresses, whereas internal FAR activity is not published. The rubric requires deciding whether stable public tags attach to all necessary activity; neither a private-network address alone nor public addresses on boundary transfers settles that question for the whole near.com account flow. No verified reference-client trace establishes all published identifiers.",
+      "neededEvidence": "Снимок эталонного near.com-процесса от депозита до двух внутренних платежей и вывода: список всех публикуемых ID и возможность их связывания.",
+      "limitations": "Постоянный идентификатор внутри закрытого реестра не является автоматически публичным отслеживаемым тегом; адреса границ не доказывают, что все операции пользователя публично имеют один идентификатор.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://intents.near.org/confidential",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://github.com/hairy-pointer/near-intents-amm-solver/blob/59d5753323ff8b4ebb1224d490a44d75bb60452a/src/services/intents.service.ts",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/accounts.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://near.com/terms"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Снимок эталонного near.com-процесса от депозита до двух внутренних платежей и вывода: список всех публикуемых ID и возможность их связывания."
+    },
+    {
+      "criterionId": "coverage.identity.reusable-address",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Internal account activity is hidden from public observers, but no default stealth/one-time receiving address derivation or reference-client receiving behavior is specified. A recipient account accepted by the confidential API is not sufficient evidence of unlinkable receiving addresses as defined by this criterion.",
+      "neededEvidence": "Documentation or code showing default shielded, stealth OR one-time receiving in near.com and which identifiers become public. A synthetic/redacted example can help; stealth-address generation is not mandatory under the rubric.",
+      "limitations": "Одноразовые адреса Trezu принадлежат механизму её внешних депозитов, а не обязательно приёму денег near.com. Сокрытая запись в private ledger не означает автоматического создания stealth-адресов.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/quickstart/confidential-swaps",
+        "https://docs.near-intents.org/api-reference/oneclick/request-a-swap-quote",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://github.com/hairy-pointer/near-intents-amm-solver/blob/59d5753323ff8b4ebb1224d490a44d75bb60452a/src/services/intents.service.ts",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/accounts.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://github.com/NEAR-DevHub/trezu-docs/blob/main/confidential-treasuries.mdx",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/quickstart/confidential-swaps",
+        "https://docs.near-intents.org/api-reference/oneclick/request-a-swap-quote"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Описание или код скрытого, одноразового либо stealth-получения по умолчанию в near.com и перечень публикуемых идентификаторов. Подойдёт синтетический пример; именно stealth-адреса не обязательны."
+    },
+    {
+      "criterionId": "coverage.execution.function-hiding",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "A special Zexe construction is not a universal requirement: Prividium was credited from non-public per-transaction calls. FAR hides publication but the supported path uses a known canonical ledger and fixed operations. The options do not cleanly represent a known contract with hidden action details; deployed private-program/call coverage remains unestablished. This classification ambiguity, rather than a demanded ZK construction, remains unknown.",
+      "neededEvidence": "Привязанный к FAR список развернутых приватных контрактов/методов, видимость типов операций для конкретных противников и вариант автора рубрики для permissioned-private ledger.",
+      "limitations": "Утверждение о скрытии операции от публичного наблюдателя не устанавливает сокрытие вызываемой функции для каждой поддерживаемой приватной программы; методологически это может требовать разграничить неизвестный код и скрытое содержание известного метода.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/hairy-pointer/near-intents-amm-solver/blob/59d5753323ff8b4ebb1224d490a44d75bb60452a/src/services/intents.service.ts",
+        "https://intents.near.org/confidential",
+        "Web search: site:docs.near-intents.org \"private\" \"function\" \"contract\"",
+        "https://github.com/near/intents/blob/4127e8e8fbe4206fa910c4fe7f8028c9e0972348/contracts/defuse/core/src/intents/mod.rs",
+        "https://github.com/near/intents/blob/4127e8e8fbe4206fa910c4fe7f8028c9e0972348/contracts/defuse/core/src/intents/auth.rs",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/auth.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/tokens/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://www.node.monster/blog/node-monster-supports-near-protocol-phase-0-confidential-intents-launch",
+        "https://github.com/NEAR-DevHub/trezu-docs/blob/main/confidential-treasuries.mdx",
+        "https://github.com/hairy-pointer/near-intents-amm-solver/blob/59d5753323ff8b4ebb1224d490a44d75bb60452a/src/services/intents.service.ts"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Привязанный к FAR список развернутых приватных контрактов/методов, видимость типов операций для конкретных противников и вариант автора рубрики для permissioned-private ledger."
+    },
+    {
+      "criterionId": "coverage.anonymity-set.default",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The Sep17 company announcement describes near.com as confidential by default, while the saved product page describes opting in through a Main/Confidential Account toggle. The toggle page has no verified earlier publication/version date, so the earlier claim that the announcement supersedes it was unsupported. The archived client and public login observation do not settle the initial account mode for an ordinary new user. Keep the conflict unresolved rather than treating a marketing default as verified current behavior. Generic 1Click public defaults refer to a separate integration route.",
+      "neededEvidence": "Датированное применимое описание или код начального режима обычного нового пользователя near.com и выбора Main/Confidential Account; объяснение расхождения с переключателем.",
+      "neededEvidenceRussian": "Датированное применимое описание или код начального режима обычного нового пользователя near.com и выбора Main/Confidential Account; объяснение расхождения с переключателем.",
+      "limitations": "Объявление о confidential by default не доказывает, что страница с opt-in устарела. Начальная настройка реального счёта не проверялась.",
+      "sourcesReviewed": [
+        "https://www.prnewswire.com/news-releases/nearcoms-confidential-tvl-reaches-70-million-triggering-the-near3-33-snapshot-amid-industry-wide-privacy-wave-302881903.html",
+        "Archived earlier Confidential Intents product walkthrough and generic quote API documentation",
+        "Public near.com landing/login UI on Oct8; no wallet/login/account created",
+        "Final review: literal rubric, archived applicable sources, exact quotes and pinned deployment scope checked."
+      ],
+      "suggestedSourceUrls": ["https://near.com/", "https://intents.near.org/confidential"]
+    },
+    {
+      "criterionId": "trust.decryption.standing-access",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The official pinned Pinet indexer explicitly targets intents.far and has a supported ordinary JSON transaction/event storage path. Its generic EventJson.data may carry ciphertext, however, and the typed PostgreSQL transfer view filters public contracts rather than FAR. Thus source format alone does not establish standing access to confidential user amounts/balances/history. Structured signed-intent service inputs and Business operator-access statements are relevant leads, but the selected retail production key/enclave topology and actual FAR event semantics remain unverified. No user-only or routine-operator claim is established, and no global key is inferred.",
+      "neededEvidence": "Датированная конфигурация защищённого исполнения каждого класса операции, список полей до и после расшифрования, IAM хранилищ, ключевые владельцы и независимая аттестация.",
+      "limitations": "`May be able` не означает постоянного доступа всех операторов к полному открытому состоянию. JSON может быть шифротекстом, а публичная SQL-витрина переводов фильтрует не FAR. Неизвестно, изменился ли режим после Phase 0.",
+      "sourcesReviewed": [
+        "Read Confidential Intents architecture, signed-execution and account API docs saved in sources/",
+        "Reviewed near/intents at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348 and pinned solver integration at 59d5753323ff8b4ebb1224d490a44d75bb60455; no deployed FAR correspondence established",
+        "Read OutLayer agent-custody technical integration documentation and official May 27 architecture article; distinguish paths and unspecified enclave coverage",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/README.md",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/transactions.rs",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/silver_transfers.rs",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/events.rs",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-clickhouse/src/main.rs",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-clickhouse/src/handlers/events.rs",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://www.node.monster/blog/node-monster-supports-near-protocol-phase-0-confidential-intents-launch",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957",
+        "https://near.com/terms",
+        "https://outlayer.fastnear.com/docs/agent-custody",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/README.md",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/silver_transfers.rs"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Датированная конфигурация защищённого исполнения каждого класса операции, список полей до и после расшифрования, IAM хранилищ, ключевые владельцы и независимая аттестация."
+    },
+    {
+      "criterionId": "trust.decryption.infra-visibility",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The supported FAR/Pinet ClickHouse path preserves transaction envelopes/actions and generic event JSON. A JSON value can contain encrypted private fields; the separate typed transfer table does not demonstrate FAR values because its production filter names public contracts. Mandatory signed-intent requests establish documented structured pre-inclusion service input, but not the boundary at which retail infrastructure can inspect private values outside a protected execution environment. The actual FAR payload semantics and default ingress/enclave topology are unresolved, so neither plaintext-operator nor TEE-only classification is established.",
+      "neededEvidence": "Полная потоковая схема: браузер → 1Click → релей → solver → узел FAR → indexer/ClickHouse; поля plaintext/ciphertext, TEE-границы и реальные права чтения.",
+      "limitations": "Наличие структурированных заявок у отдельных сервисов не доказывает видимость защищённого баланса и всей истории в читаемой форме у администратора. Текущий FAR payload/enclave и реальный production IAM не проверены.",
+      "sourcesReviewed": [
+        "Read Confidential Intents architecture, signed-execution and account API docs saved in sources/",
+        "Reviewed near/intents at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348 and pinned solver integration at 59d5753323ff8b4ebb1224d490a44d75bb60455; no deployed FAR correspondence established",
+        "Read OutLayer agent-custody technical integration documentation and official May 27 architecture article; distinguish paths and unspecified enclave coverage",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/README.md",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/transactions.rs",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/silver_transfers.rs",
+        "Third pass: https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/events.rs",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-clickhouse/src/main.rs",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-clickhouse/src/handlers/events.rs",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957",
+        "https://outlayer.fastnear.com/docs/agent-custody",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/README.md",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/silver_transfers.rs",
+        "https://github.com/defuse-protocol/rust-near-indexer/blob/a7060df79778fe8597496d7074b415eed2690957/indexer-common/src/extractors/transactions.rs"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Полная потоковая схема: браузер → 1Click → релей → solver → узел FAR → indexer/ClickHouse; поля plaintext/ciphertext, TEE-границы и реальные права чтения."
+    },
+    {
+      "criterionId": "trust.decryption.retroactive",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The sources establish access-controlled infrastructure but do not specify storage encryption, archive retention, backup keys or a global/threshold decryption-key hierarchy. Legal disclosure capability is not proof of a global key. It remains unsettled whether compromise of a particular key or committee would reveal every user history.",
+      "neededEvidence": "Применяемая схема шифрования и ротации ключей, модели резервирования, хранения и доступа к историческим данным для заданного компрометационного сценария.",
+      "limitations": "Юридическое право и возможность получения «certain» информации не равны глобальному ретроспективному ключу. Никаких сроков хранения всех данных, backup-схем и полномочий после компрометации ключа не подтверждено.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://near.com/privacy",
+        "https://docs.near-intents.org/llms.txt",
+        "https://github.com/near/intents/tree/4127e8e8fbe4206fa910c4fe7f8028c9e0972348/contracts/defuse/src",
+        "web search: NEAR FAR confidential intents private shard viewing keys encryption post quantum master key",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://near.com/terms",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957",
+        "https://near.com/privacy"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Применяемая схема шифрования и ротации ключей, модели резервирования, хранения и доступа к историческим данным для заданного компрометационного сценария."
+    },
+    {
+      "criterionId": "trust.crypto.hardware",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "A TEE-based bridge is explicitly part of the system, but the public material does not state whether its TEE is essential to confidentiality, only to bridge integrity, or merely defense in depth. It also does not document TEE coverage for validators or services. Neither no reliance nor the more specific confidentiality/integrity classification is established.",
+      "neededEvidence": "Заверенный образ/measurement действующего моста, схема threat model, доступ валидаторов к plaintext, процесс проверки attestation и зависимость конфиденциальности от аппаратного доверия.",
+      "limitations": "TEE моста может гарантировать целостность, подпись или защиту ключей, не обязательно тайну всех пользовательских операций. Отсутствуют измерения enclave, алгоритмы аттестации и связь текущего production bridge image с документацией.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://intents.near.org/confidential",
+        "https://www.near.org/blockchain",
+        "https://docs.near-intents.org/security-compliance/terms-of-service",
+        "https://docs.near-intents.org/llms.txt",
+        "web search: site:nearone.org private shard TEE bridge FAR confidential",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, token_diff; case-insensitive word-boundary TEE/TDX/SGX/attestation/encrypt/decrypt scan across contracts/defuse and crates/near, crates/primitives, crates/signatures",
+        "/private/tmp/near-trust-intents/contracts/defuse/core/src/engine/state/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, token_diff; case-insensitive word-boundary TEE/TDX/SGX/attestation/encrypt/decrypt scan across contracts/defuse and crates/near, crates/primitives, crates/signatures",
+        "/private/tmp/near-trust-intents/contracts/defuse/core/src/intents/token_diff.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, token_diff; case-insensitive word-boundary TEE/TDX/SGX/attestation/encrypt/decrypt scan across contracts/defuse and crates/near, crates/primitives, crates/signatures",
+        "Deployed FAR node/private-bridge/enclave runtime source and code-hash correspondence: unavailable in supplied public core and archived sources",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://www.node.monster/blog/node-monster-supports-near-protocol-phase-0-confidential-intents-launch",
+        "https://intents.near.org/confidential",
+        "https://www.near.org/blockchain"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Заверенный образ/measurement действующего моста, схема threat model, доступ валидаторов к plaintext, процесс проверки attestation и зависимость конфиденциальности от аппаратного доверия."
+    },
+    {
+      "criterionId": "trust.crypto.post-quantum",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The sources do not specify FAR private-data encryption at rest or in transit with sufficient detail to classify harvest-now-decrypt-later resistance. Ed25519 authorization, public NEAR commitments and unrelated Chain Signatures/CKD work do not establish post-quantum confidentiality of this private system.",
+      "neededEvidence": "Перечень алгоритмов key exchange, state encryption, log backup, ротации и обоснование post-quantum для исторических конфиденциальных сообщений.",
+      "limitations": "Квантовая стойкость подписи и «harvest-now-decrypt-later» защита приватных данных — разные вопросы. Без алгоритмов, длины ключей, сроков жизни секретов и модели атак один вариант неизвестен.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://docs.near-intents.org/llms.txt",
+        "https://github.com/near/intents/tree/4127e8e8fbe4206fa910c4fe7f8028c9e0972348/contracts/defuse/src",
+        "web search: NEAR FAR confidential intents private shard viewing keys encryption post quantum master key",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/accounts/state.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-signer-impl/intent-signer-nep413.ts",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-payload-factory.ts",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/authentication",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Перечень алгоритмов key exchange, state encryption, log backup, ротации и обоснование post-quantum для исторических конфиденциальных сообщений."
+    },
+    {
+      "criterionId": "custody.pause.halt",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Seven permissioned validators are advertised, but the source does not establish their names, independent ownership, voting weights, threshold for liveness, infrastructure control or a halt switch. The small-set option requires at least three independent parties. Counting advertised validators alone cannot prove that threshold.",
+      "neededEvidence": "Genesis/конфигурация валидаторов на дату с хешами, threshold finality/liveness, владельцы узлов и роли для остановки обязательного моста.",
+      "limitations": "Маркетинговые «семь» и одна идентифицированная организация не дают BFT-порогов, веса голосов, текущих машин и общих операторских зависимостей. Нельзя выводить, сколько лиц способно остановить FAR.",
+      "sourcesReviewed": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://www.near.org/blockchain",
+        "https://intents.near.org/confidential",
+        "https://docs.near-intents.org/llms.txt",
+        "web search: NEAR private shard FAR validator halt incident outage 2026",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Pausable, PauseManager, UnpauseManager, #[pause] on imt_burn, upgrade",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/tokens/imt.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Pausable, PauseManager, UnpauseManager, #[pause] on imt_burn, upgrade",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/upgrade.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Pausable, PauseManager, UnpauseManager, #[pause] on imt_burn, upgrade",
+        "Deployed FAR node/private-bridge/enclave runtime source and code-hash correspondence: unavailable in supplied public core and archived sources",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://www.node.monster/blog/node-monster-supports-near-protocol-phase-0-confidential-intents-launch",
+        "https://www.near.org/blockchain"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Genesis/конфигурация валидаторов на дату с хешами, threshold finality/liveness, владельцы узлов и роли для остановки обязательного моста."
+    },
+    {
+      "criterionId": "programmability.composability.private-private",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Private atomic balance settlement inside intents.far does not establish atomic private function calls between different contracts. No deployed FAR intercontract example or call semantics were located. Public NEAR cross-contract capabilities are not substituted for private-system evidence. Official NEAR cross-contract docs describe asynchronous non-atomic receipts, while the dated Nightshade3.0 page claims multi-contract atomic interactions. Applicability of that newer claim to FAR is not established; neither a positive arbitrary/limited guarantee nor categorical No is selected from the contradiction.",
+      "neededEvidence": "Реальная FAR транзакция или тест с двумя независимыми приватными контрактами и атомарным откатом всего исполнения, с развёрнутыми хешами.",
+      "limitations": "Один контракт с множеством операций не является синхронным вызовом между двумя разными приватными контрактами. Два бренда могут обмениваться через мост, не разделяя atomic state.",
+      "sourcesReviewed": [
+        "Read architecture, swaps, quote-api and program-example",
+        "Web search: site:docs.near-intents.org \"private\" \"atomic\" contracts",
+        "Web search: site:docs.near-intents.org \"FAR\" \"public state\"",
+        "/private/tmp/near-trust-intents/contracts/defuse/core/src/intents/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed AuthCall, Promise::new, on_auth, auth_call, concurrent promise warning",
+        "/private/tmp/near-trust-intents/contracts/defuse/core/src/intents/auth.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed AuthCall, Promise::new, on_auth, auth_call, concurrent promise warning",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/intents/auth_call.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed AuthCall, Promise::new, on_auth, auth_call, concurrent promise warning",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/intents/state.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed AuthCall, Promise::new, on_auth, auth_call, concurrent promise warning",
+        "Deployed FAR node/private-bridge/enclave runtime source and code-hash correspondence: unavailable in supplied public core and archived sources",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/auth.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/tokens/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/NEAR-DevHub/trezu-docs/blob/main/confidential-treasuries.mdx",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/orders"
+      ],
+      "neededEvidenceRussian": "Описание исполнения FAR с подтверждением, применяется ли объявленная Nightshade3.0 атомарность между разными приватными контрактами. Датированная спецификация или применимый код могут быть достаточны; реальная транзакция — возможное, но не обязательное подтверждение."
+    },
+    {
+      "criterionId": "programmability.blending.private-reads",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The relay reads public signature authorization and FAR balances, but that is not a privacy/consistency guarantee for application logic reading public price or configuration state. No live FAR read primitive establishing concealment of the read set or consistency was verified.",
+      "neededEvidence": "Код и след исполненного FAR-приложения, читающего публичный контракт/оракул внутри приватной логики с определённой finality.",
+      "limitations": "Проверка публичной подписи внешним сервисом не доказывает, что приватный контракт способен на цепи синхронно читать публичную цену/состояние и сохранять приватный контекст.",
+      "sourcesReviewed": [
+        "Read architecture, swaps, quote-api and program-example",
+        "Web search: site:docs.near-intents.org \"private\" \"atomic\" contracts",
+        "Web search: site:docs.near-intents.org \"FAR\" \"public state\"",
+        "/private/tmp/near-trust-intents/contracts/defuse/core/src/engine/state/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, auth_call, wnear_id, token_balances",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/intents/state.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, auth_call, wnear_id, token_balances",
+        "/private/tmp/near-trust-intents/contracts/defuse/src/contract/accounts/state.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed StateView, balance_of, auth_call, wnear_id, token_balances",
+        "Deployed FAR node/private-bridge/enclave runtime source and code-hash correspondence: unavailable in supplied public core and archived sources",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/auth.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/tokens/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/quickstart/signed-intent-execution",
+        "https://docs.near-intents.org/integration/distribution-channels/1click-api/orders"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Код и след исполненного FAR-приложения, читающего публичный контракт/оракул внутри приватной логики с определённой finality."
+    },
+    {
+      "criterionId": "programmability.performance.cost",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Generic fees name the public intents.near ledger and 1Click quote schedules, but do not establish a typical all-in $1,000 confidential-to-confidential transfer cost through near.com. Foreign-chain gas, partner fee schedules and swaps are not silently substituted for the scoped P2P private transfer. No transaction or paid quote was executed.",
+      "neededEvidence": "Подтверждённая публично датированная спецификация тарифа для private-to-private перевода $1000 либо несколько эталонных receipt/quote с явно зафиксированными всеми составляющими.",
+      "limitations": "Структура котировки не является фактической полной стоимостью конкретного P2P перевода $1000 внутри near.com Confidential Account, включая газ, sponsor и комиссию. Отдельный API `dry=true` требует аутентификации (401 в 3-м проходе).",
+      "sourcesReviewed": [
+        "Read program-fees, quote-api, architecture, program-blog-tech and program-sdk",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/auth.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/core/src/intents/mod.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/tokens/imt.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/intents/execute.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/resources/fees",
+        "https://near.com/terms",
+        "https://docs.near-intents.org/api-reference/oneclick/request-a-swap-quote"
+      ],
+      "neededEvidenceRussian": "Тариф именно near.com для внутреннего конфиденциального перевода $1000 со всеми компонентами либо опубликованный представительский расчёт/квитанция. Финансовая операция не обязательна. Общий тариф 1Click не заменяет индивидуальные настройки канала."
+    },
+    {
+      "criterionId": "governance.upgrades.verifier",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The system has public account-signature checks, FAR execution and bridge verification, but no complete deployed verifier/attestation-key change policy was verified. Absence of user ZK circuits does not settle verification administration, and this criterion does not allow N/A. Public MPC governance is not imported as private bridge control.",
+      "neededEvidence": "Рабочая конфигурация verifier/attestation policy, чей ключ и через какой процесс изменяет проверяющие параметры, развёрнутые версии до и после апгрейда.",
+      "limitations": "Отсутствие ZK proof system не делает автоматически неприменимым управление ключами проверки моста и FAR. Кто меняет trusted hardware measurement, подписи и bytecode — неизвестно.",
+      "sourcesReviewed": [
+        "Read architecture, program-changelog, program-shield and docs-index",
+        "Web search: \"intents.far\" \"upgrade\"",
+        "Web search: site:docs.near-intents.org \"Confidential\" \"deploy\" governance upgrade",
+        "Review near/intents at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348: contracts/defuse/src/contract/upgrade.rs and admin.rs",
+        "Read pinned IMT mint/burn source and signed-execution",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/crates/near/controller/src/lib.rs",
+        "Round6 selected-file review: https://github.com/aurora-is-near/aurora-controller-factory/blob/8f7f943e197587ac01eb1dcc80a3442da9556623/contract/src/lib.rs",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957",
+        "https://near.com/terms"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Рабочая конфигурация verifier/attestation policy, чей ключ и через какой процесс изменяет проверяющие параметры, развёрнутые версии до и после апгрейда."
+    },
+    {
+      "criterionId": "governance.process.control",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Restricted FAR participation and relay admission do not specify who can ultimately impose FAR or private bridge upgrades. Public NEAR social consensus, Foundation activity and token governance cannot be assumed to govern this private fork. No private-system authorization hierarchy or ultimate-controller statement was verified.",
+      "neededEvidence": "Декларация конечного владельца кода/ключей и публично проверяемые production роли управления FAR, моста и сетевого software.",
+      "limitations": "Доступ solver к релею не определяет конечного владельца приватной сети и обязательного моста; юридические полномочия API не равны криптографическим полномочиям node/bridge.",
+      "sourcesReviewed": [
+        "Read architecture, program-changelog, program-shield and docs-index",
+        "Web search: \"intents.far\" \"upgrade\"",
+        "Web search: site:docs.near-intents.org \"Confidential\" \"deploy\" governance upgrade",
+        "Review near/intents at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348: contracts/defuse/src/contract/upgrade.rs and admin.rs",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/crates/near/controller/src/lib.rs",
+        "Round6 selected-file review: https://github.com/aurora-is-near/aurora-controller-factory/blob/8f7f943e197587ac01eb1dcc80a3442da9556623/contract/src/lib.rs",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://near.com/terms",
+        "https://docs.near-intents.org/changelog/overview",
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Декларация конечного владельца кода/ключей и публично проверяемые production роли управления FAR, моста и сетевого software."
+    },
+    {
+      "criterionId": "governance.process.public-process",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "Canonical public backing-ledger proposals and executions are now observed onchain, including Oct 1-2 Verifier upgrades. Whether private FAR/bridge changes follow that same public process remains unestablished. The whole-system answer stays unknown; the observed public process is disclosed separately.",
+      "neededEvidence": "Ссылки на голосование, timelock и execution tx приватного FAR/bridge обновления или формальное правило закрытого процесса с датами.",
+      "limitations": "Наличие публичных релиз-нот и публичного процесса у Verifier не доказывает открытый proposal→vote→execute процесс для приватного мостового образа и FAR.",
+      "sourcesReviewed": [
+        "Read architecture, program-changelog, program-shield and docs-index",
+        "Web search: \"intents.far\" \"upgrade\"",
+        "Web search: site:docs.near-intents.org \"Confidential\" \"deploy\" governance upgrade",
+        "Review near/intents at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348: contracts/defuse/src/contract/upgrade.rs and admin.rs",
+        "Read program-changelog dated confidential entries",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/crates/near/controller/src/lib.rs",
+        "Round6 selected-file review: https://github.com/aurora-is-near/aurora-controller-factory/blob/8f7f943e197587ac01eb1dcc80a3442da9556623/contract/src/lib.rs",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/changelog/overview",
+        "https://github.com/near/intents/tree/a2dd140892b68140bf7e70814604d3ba074d656c"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Ссылки на голосование, timelock и execution tx приватного FAR/bridge обновления или формальное правило закрытого процесса с датами."
+    },
+    {
+      "criterionId": "decentralization.censorship.forced-inclusion",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "The documented path requires private RPC and bridge processing, but no bounded forced-inclusion mechanism is established for FAR. No such guarantee is inferred from public NEAR inclusion; unavailable deployed node code prevents asserting the absolute absence of all alternatives.",
+      "neededEvidence": "Публичный метод submitting force-inclusion, challenge period, независимый sender, операционные границы и демонстрация реального принудительного включения.",
+      "limitations": "В архитектуре не описано гарантированное принудительное включение без разрешения этих сервисов. Но отсутствие такой схемы в публичном описании не доказывает, что она не реализована в закрытых правилах.",
+      "sourcesReviewed": [
+        "Read archived architecture, reference-client API and near/intents source at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348 for decentralization.censorship.forced-inclusion",
+        "Searched deployed FAR/bridge specifications; source-to-deployment correspondence and private node configuration were unavailable",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://docs.near-intents.org/changelog/overview"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Публичный метод submitting force-inclusion, challenge period, независимый sender, операционные границы и демонстрация реального принудительного включения."
+    },
+    {
+      "criterionId": "decentralization.censorship.observed",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "No dated public dashboard measuring the fraction of FAR blocks censoring transactions was found. Sanctions screening and access controls are not a measured block censorship share.",
+      "neededEvidence": "Датированный набор submitted/accepted/failed FAR-транзакций и независимая метрика цензуры с выборкой/определением знаменателя.",
+      "limitations": "Отказы котировок/санкционные блокировки и сервисный uptime нельзя приравнивать к доле блоков FAR, цензурирующих валидные транзакции. Публичная FAR-история недоступна.",
+      "sourcesReviewed": [
+        "Searched \"Confidential Intents\" \"censorship\" \"dashboard\"; no FAR block-share measurement found",
+        "Read official architecture, producer descriptions and SHIELD incident documentation; they do not quantify censored FAR blocks",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://status.near-intents.org/",
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://near.com/terms"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Датированный набор submitted/accepted/failed FAR-транзакций и независимая метрика цензуры с выборкой/определением знаменателя."
+    },
+    {
+      "criterionId": "decentralization.censorship.indistinguishable",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "No deployed transaction/enclave topology establishes which private fields FAR producers inspect. Closed networking hides transactions from the public but does not establish indistinguishability to producers.",
+      "neededEvidence": "Реальные подписанные payload bytes, описание field-level masking перед консенсусом и аттестация исполнения по каждому валидатору.",
+      "limitations": "Вероятность доступности plaintext не подтверждает распределение данных всем производителям блоков на нынешней конфигурации, а тем более математическую indistinguishability.",
+      "sourcesReviewed": [
+        "Read archived architecture, reference-client API and near/intents source at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348 for decentralization.censorship.indistinguishable",
+        "Searched deployed FAR/bridge specifications; source-to-deployment correspondence and private node configuration were unavailable",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://www.node.monster/blog/node-monster-supports-near-protocol-phase-0-confidential-intents-launch",
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/defuse-protocol/rust-near-indexer/tree/a7060df79778fe8597496d7074b415eed2690957"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Реальные подписанные payload bytes, описание field-level masking перед консенсусом и аттестация исполнения по каждому валидатору."
+    },
+    {
+      "criterionId": "security.soundness.open-critical",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "No complete dated disclosure record for FAR, the private bridge and reference client establishes presence or absence of an unpatched critical issue. Empty public verifier advisories do not prove that the whole system has none.",
+      "neededEvidence": "A dated disclosure/advisory record for the evaluated components and current patch/release status, with scope/version correspondence. A signed statement or new independent audit is useful but not a mandatory document format.",
+      "limitations": "Отсутствие в открытом advisory списка не является свидетельством отсутствия всех неисправленных критических уязвимостей, особенно в непубличных клиентах и мосте.",
+      "sourcesReviewed": [
+        "Searched NEAR Confidential Intents exploit incident security vulnerability; no complete FAR disclosure inventory identified",
+        "Read https://github.com/near/intents/security/advisories: no published entries, but this repository is not full FAR/bridge/client scope",
+        "Read official Security and incident API docs; no full public FAR vulnerability record supplied",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": ["https://docs.near-intents.org/security-compliance/security", "https://github.com/near/intents/security/advisories"],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Датированный реестр уведомлений по выбранным компонентам и состояние исправлений с версиями. Подписанный ответ или новый аудит полезны, но не являются обязательной формой документа."
+    },
+    {
+      "criterionId": "security.maturity.continuity",
+      "status": "not_established_in_reviewed_public_sources",
+      "existingRationale": "No complete dated record of forced FAR balance/state migrations was found. A state_migrate function and changelog feature updates do not prove that users have or have never been forced to withdraw and redeposit.",
+      "neededEvidence": "Датированная история развёртываний FAR/моста со state roots и отчётами о обязательной ротации адреса, withdraw-redeposit, балансов и изменениях формата.",
+      "limitations": "Официальные инструкции миграции и текущий клиентский перенос legacy-балансов существуют. Не установлено, какой из них уже был обязательным переносом приватных средств/состояния выбранного FAR-пути на дату оценки. Публичные legacy-балансы и будущая смена интерфейса не подменяют этот факт.",
+      "sourcesReviewed": [
+        "Read official changelog and May/July Confidential Intents articles for migrations and deprecations",
+        "Reviewed near/intents state migration/upgrade code at 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; code does not establish migration history",
+        "Round4: user-supplied external-AI report checked against the rubric and selected primary Node Monster/Trezu/orders sources.",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/far.rs",
+        "Round6 selected-file review: https://github.com/near/intents/blob/a2dd140892b68140bf7e70814604d3ba074d656c/contracts/defuse/src/contract/upgrade.rs",
+        "Round6 selected-file review: https://github.com/defuse-protocol/sdk-monorepo/blob/75f88bc99d0d09fbfa23ebb35e27dba429a14e43/packages/intents-sdk/src/intents/intent-executer-impl/intent-executer.ts",
+        "Round6 selected-file review: https://github.com/near/near-intents/blob/7680615ca34584360a6e0e4f4c9da536c710b105/README.md",
+        "Round7: official documentation and pinned current core/SDK; actual served client where applicable. Public FAR/Pinet Lake storage reference returned 404; no private RPC credentials or user signatures were obtained. Public status host could not resolve.",
+        "Round8: source applicability, literal rubric and known current reference/host semantics checked; unresolved facts are enumerated in information-gaps.json."
+      ],
+      "suggestedSourceUrls": [
+        "https://docs.near-intents.org/changelog/overview",
+        "https://docs.near-intents.org/integration/market-makers/confidential-intents",
+        "https://github.com/near/intents/tree/a2dd140892b68140bf7e70814604d3ba074d656c"
+      ],
+      "neededEvidenceRussian": "Применимое к текущему пути официальное техническое описание или связанный с ним код/публичное наблюдение. Конкретный требуемый факт: Датированная история развёртываний FAR/моста со state roots и отчётами о обязательной ротации адреса, withdraw-redeposit, балансов и изменениях формата."
+    }
+  ],
+  "round5Note": "One original structural gap resolved; upgrade-delay classification withdrawn. Official evidence exists for several questions but needs scope/version or rubric interpretation; this is not universal absence of official information.",
+  "round6Note": "All 34 entering unknowns received bounded code/methodology review. Upgrade adverse bound resolved; an unrelated prior undated validator-count answer was withdrawn. Membership changed; total unknown count remains 34.",
+  "round7Note": "Seven supported answers established by served reference-client code, official SDK/docs and normal rubric interpretation. 27 remain unestablished; not an assertion of universal absence.",
+  "round8Note": "Five former unknowns resolved; one previously answered delay corrected to Instant. All remaining demands should describe sufficient evidence, not mandatory private transactions or exhaustive infrastructure tests."
+}

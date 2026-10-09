@@ -1,0 +1,444 @@
+[
+  {
+    "criterionId": "trust.disclosure.granularity",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The receipt identifies one completed send, with a user-controlled includeInternalDetails flag. Its scope is a transaction rather than all account history. The fine option is supported by the per-send export; ordinary history query filters are not treated as access-control scopes.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "trust.crypto.hardware",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "A TEE-based bridge is explicitly part of the system, but the public material does not state whether its TEE is essential to confidentiality, only to bridge integrity, or merely defense in depth. It also does not document TEE coverage for validators or services. Neither no reliance nor the more specific confidentiality/integrity classification is established."
+  },
+  {
+    "criterionId": "custody.pause.halt",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Seven permissioned validators are advertised, but the source does not establish their names, independent ownership, voting weights, threshold for liveness, infrastructure control or a halt switch. The small-set option requires at least three independent parties. Counting advertised validators alone cannot prove that threshold."
+  },
+  {
+    "criterionId": "programmability.contracts.deployment",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "Official current technical documentation describes confidential multisig treasury contracts deployed on the private shard and explicitly identifies it as near.com's shard. It describes an available treasury-creation flow. This supports documented operator-approved contract applications, the rubric's middle option, without claiming open arbitrary deployment. Private bytecode, deployer ACL and the exact hybrid governance placement remain unverified; public governance metadata must not be assumed secret.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "programmability.composability.private-private",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Private atomic balance settlement inside intents.far does not establish atomic private function calls between different contracts. No deployed FAR intercontract example or call semantics were located. Public NEAR cross-contract capabilities are not substituted for private-system evidence. Official NEAR cross-contract docs describe asynchronous non-atomic receipts, while the dated Nightshade3.0 page claims multi-contract atomic interactions. Applicability of that newer claim to FAR is not established; neither a positive arbitrary/limited guarantee nor categorical No is selected from the contradiction."
+  },
+  {
+    "criterionId": "programmability.blending.private-reads",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The relay reads public signature authorization and FAR balances, but that is not a privacy/consistency guarantee for application logic reading public price or configuration state. No live FAR read primitive establishing concealment of the read set or consistency was verified."
+  },
+  {
+    "criterionId": "programmability.disclosure.primitives",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The canonical account API/official SDK supplies a fixed account-wide User-Session read mechanism, and the served client implements a fixed per-send receipt API and signed schema. These are limited mechanisms, not general per-app viewing keys, arbitrarily scoped permissions or encrypted recipient logs. The client receipt endpoint was not separately demonstrated as a general third-party SDK API.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "programmability.disclosure.compliance-proofs",
+    "searched": [
+      "/private/tmp/near-trust-intents/contracts/defuse/core/src/intents/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Intent enum, AccountManager, ExecuteInspector events, TokenDiffEvent; view_key/viewing_key/disclosure/association_set/sanction/compliance_proof scan across public core and support crates",
+      "/private/tmp/near-trust-intents/contracts/defuse/src/accounts.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Intent enum, AccountManager, ExecuteInspector events, TokenDiffEvent; view_key/viewing_key/disclosure/association_set/sanction/compliance_proof scan across public core and support crates",
+      "/private/tmp/near-trust-intents/contracts/defuse/src/contract/accounts/mod.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Intent enum, AccountManager, ExecuteInspector events, TokenDiffEvent; view_key/viewing_key/disclosure/association_set/sanction/compliance_proof scan across public core and support crates",
+      "/private/tmp/near-trust-intents/contracts/defuse/src/contract/intents/execute.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Intent enum, AccountManager, ExecuteInspector events, TokenDiffEvent; view_key/viewing_key/disclosure/association_set/sanction/compliance_proof scan across public core and support crates",
+      "/private/tmp/near-trust-intents/contracts/defuse/core/src/intents/token_diff.rs @ 4127e8e8fbe4206fa910c4fe7f8028c9e0972348; reviewed Intent enum, AccountManager, ExecuteInspector events, TokenDiffEvent; view_key/viewing_key/disclosure/association_set/sanction/compliance_proof scan across public core and support crates",
+      "Deployed FAR node/private-bridge/enclave runtime source and code-hash correspondence: unavailable in supplied public core and archived sources"
+    ],
+    "note": "The normal supported confidential quote/deposit flow performs external address screening; users submit wallet-authorized intents, not identity-hidden compliance statements. No private compliance-proof interface is exposed by the documented integration. As in the published Canton/Tempo/Prividium evaluations, ordinary AML and signatures do not qualify. This absence is bounded to the supported protocol flow, not a claim that every conceivable future/private third-party app is impossible.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "programmability.disclosure.verifiable",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The shipped receipt contains disclosed values and an Ed25519 issuer signature. The client verifies the signed document format and visual integrity, but no FAR state/inclusion/completeness proof is represented. Select the middle disclosed-plaintext option: document authentication is established without claiming cryptographic correctness of the underlying private ledger or a complete history.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "coverage.unlinkability.public-apps",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The official Perps reference flow claims a dedicated Hyperliquid account with confidential funding and return to the private account. This supports a documented DeFi adapter that hides the originating FAR account, not arbitrary anonymous public calls or private Hyperliquid positions. The vendor claim is decisive marketing evidence; client checks corroborate the supported integration but are contextual rather than proof of unlinkability. The EVM fallback may use a connected public address; the classification is for the supported dedicated-account confidential path. The client also contains a wallet-to-trading-address lookup API; its access policy and real linkage were not established. A later anonymous synthetic lookup returned an empty 403, which is not proof of access protection at the cutoff. No empirical anonymity measurement is claimed."
+  },
+  {
+    "criterionId": "coverage.identity.persistent-id",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Public boundary transfers expose source/destination addresses, whereas internal FAR activity is not published. The rubric requires deciding whether stable public tags attach to all necessary activity; neither a private-network address alone nor public addresses on boundary transfers settles that question for the whole near.com account flow. No verified reference-client trace establishes all published identifiers."
+  },
+  {
+    "criterionId": "coverage.identity.reusable-address",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Internal account activity is hidden from public observers, but no default stealth/one-time receiving address derivation or reference-client receiving behavior is specified. A recipient account accepted by the confidential API is not sufficient evidence of unlinkable receiving addresses as defined by this criterion."
+  },
+  {
+    "criterionId": "coverage.identity.identity-proofs",
+    "codeChecked": true,
+    "searched": [
+      "Round9: rubric identity-proofs guidance and archived peer VM/app capability answers reviewed",
+      "Round9: near.com-linked private treasury application and same-functionality documentation",
+      "Round9: matched near/intents@16d04f6e Cargo.lock near-sdk 5.29.1; immutable SDK pairing documentation"
+    ],
+    "note": "The rubric explicitly defines via apps as developers can build it; a currently deployed anonymous credential app is not required. Applicable treasury documentation establishes approved smart contracts on near.com's private shard and states public-shard functionality is provided there. Public SDK 5.29.1, pinned in the matched current core Cargo.lock, supplies pairing verification suited to ZK proofs. This supports an application-level implementation as a documented capability inference, consistent with peer VM-capability reasoning. It does not establish a native anonymous-identity primitive, permissionless admission, a deployed credential app or an independently byte-verified private host. If the private host restricts these application operations, this classification needs revision.",
+    "pass": "round9"
+  },
+  {
+    "criterionId": "coverage.execution.function-hiding",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "A special Zexe construction is not a universal requirement: Prividium was credited from non-public per-transaction calls. FAR hides publication but the supported path uses a known canonical ledger and fixed operations. The options do not cleanly represent a known contract with hidden action details; deployed private-program/call coverage remains unestablished. This classification ambiguity, rather than a demanded ZK construction, remains unknown."
+  },
+  {
+    "criterionId": "trust.decryption.standing-access",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The official pinned Pinet indexer explicitly targets intents.far and has a supported ordinary JSON transaction/event storage path. Its generic EventJson.data may carry ciphertext, however, and the typed PostgreSQL transfer view filters public contracts rather than FAR. Thus source format alone does not establish standing access to confidential user amounts/balances/history. Structured signed-intent service inputs and Business operator-access statements are relevant leads, but the selected retail production key/enclave topology and actual FAR event semantics remain unverified. No user-only or routine-operator claim is established, and no global key is inferred."
+  },
+  {
+    "criterionId": "trust.decryption.infra-visibility",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The supported FAR/Pinet ClickHouse path preserves transaction envelopes/actions and generic event JSON. A JSON value can contain encrypted private fields; the separate typed transfer table does not demonstrate FAR values because its production filter names public contracts. Mandatory signed-intent requests establish documented structured pre-inclusion service input, but not the boundary at which retail infrastructure can inspect private values outside a protected execution environment. The actual FAR payload semantics and default ingress/enclave topology are unresolved, so neither plaintext-operator nor TEE-only classification is established."
+  },
+  {
+    "criterionId": "trust.decryption.retroactive",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The sources establish access-controlled infrastructure but do not specify storage encryption, archive retention, backup keys or a global/threshold decryption-key hierarchy. Legal disclosure capability is not proof of a global key. It remains unsettled whether compromise of a particular key or committee would reveal every user history."
+  },
+  {
+    "criterionId": "trust.disclosure.selective",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The served near.com reference client offers a per-send signed PDF and an optional internal funding-details switch. The same WithdrawStatus supports confidential operations and does not exclude them from the successful-send receipt button. A user can give the selected receipt to a party they choose. This is app-specific export, not a native viewing key or FAR state proof. The issue endpoint was not invoked on a real transaction.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "trust.disclosure.revocable",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The official supported User-Session mechanism allows a user to authorize an integration to read confidential balances/history. Access and refresh credentials have returned expiration times; an access-only grant limits future reads without giving the refresh credential. This satisfies limiting disclosure going forward, as expiring delegated RPC access does in Tempo. Immediate per-viewer revocation was not verified; exported PDFs and data already copied remain readable. Illustrative one-hour/30-day values are not asserted as universal production bounds.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "trust.crypto.post-quantum",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The sources do not specify FAR private-data encryption at rest or in transit with sufficient detail to classify harvest-now-decrypt-later resistance. Ed25519 authorization, public NEAR commitments and unrelated Chain Signatures/CKD work do not establish post-quantum confidentiality of this private system."
+  },
+  {
+    "criterionId": "custody.pause.track-record",
+    "codeChecked": true,
+    "searched": [
+      "Round9: intents-dao.near get_proposals, all105 records at immutable block219099811; pause/unpause actions decoded",
+      "Round9: first-party Oct1 incident raw oEmbed rechecked",
+      "Round9: historical pa_is_paused ALL/mt_on_transfer at Sep1 block213877278 false; archival endpoint subsequently returned -429 deprecation warning, no further history inferred"
+    ],
+    "note": "At least one protocol pause in the last 12 months is supported by the official Oct1 service-stop incident involving the canonical Intents contract and the pinned Approved proposal98 requesting pa_pause_feature for mt_on_transfer on intents.near. This mandatory backing contract is in scope; this is a protocol-component pause, not merely a website outage. Select One as the supported adverse bound under CONFLICT_RULES, not as an exact complete incident total. Proposal status is not substituted for a transaction execution receipt, and no halt of FAR block production is claimed. Other unpause proposals may be idempotent. A Sep1 historical read found both checked flags false at one sampled time; later archival requests hit endpoint deprecation/rate limiting and cannot establish the full history.",
+    "pass": "round9"
+  },
+  {
+    "criterionId": "programmability.composability.liquidity",
+    "pass": "round7",
+    "searched": [
+      "near/intents@16d04f6e source matched to public v0.4.5; private variant deployment remains unmatched",
+      "Served near.com client bundles at Oct8 deployment, read as code; not financial execution",
+      "Public NEAR reads pinned to block 219099811; private RPC credentials not acquired"
+    ],
+    "note": "The official Earn guide identifies gtUSDCp as Gauntlet USDC Prime (Morpho). The served reference client has an Earn vault interface using the private-mode swap actor, confidential vault-share balances and a canonical Earn quote helper. This supports private users accessing existing public DeFi through bridged/adapter receipt shares. Native arbitrary public-contract calls and atomic composition are not claimed. The server quote helper and any server override of feature availability were not inspected, and no financial operation was executed.",
+    "codeChecked": true
+  },
+  {
+    "criterionId": "programmability.performance.cost",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Generic fees name the public intents.near ledger and 1Click quote schedules, but do not establish a typical all-in $1,000 confidential-to-confidential transfer cost through near.com. Foreign-chain gas, partner fee schedules and swaps are not silently substituted for the scoped P2P private transfer. No transaction or paid quote was executed."
+  },
+  {
+    "criterionId": "governance.upgrades.upgradeability",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "A matched public controller v0.3.3 has an active downgrade path to the stored prior Verifier v0.4.4. Current v0.4.5 release metadata provides that downgrade hash and its blob exists. Either granted Downgrader account can invoke the path without a new proposal, vote or notice timer; the controller forwards Borsh-compatible upgrade bytes to the matched public Verifier. This is an immediate change of the mandatory funds-holding core, even though the key is restricted to a pre-registered downgrade target rather than arbitrary new bytes. The earlier <7-day bound is superseded by this verified path. Source tag is tied to the byte-matched vendor release, not rebuilt locally; no rollback was executed. Private FAR/bridge update rights and offchain key custody remain unverified."
+  },
+  {
+    "criterionId": "governance.upgrades.emergency",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The active rollback of the mandatory public backing core is authorized to either of two individual native accounts, without a fresh council vote or notice timer. Onchain authorization is a single-account/key path, so select the single option for the demonstrated bypass; it is not a claim that one human personally holds every key. Public access-key reads show FullAccess keys for the checked holder. Offchain custody or threshold signing and private FAR/bridge emergency policies are not established. This is rollback to a registered version, not proof of arbitrary-byte replacement by that account."
+  },
+  {
+    "criterionId": "governance.upgrades.verifier",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The system has public account-signature checks, FAR execution and bridge verification, but no complete deployed verifier/attestation-key change policy was verified. Absence of user ZK circuits does not settle verification administration, and this criterion does not allow N/A. Public MPC governance is not imported as private bridge control."
+  },
+  {
+    "criterionId": "governance.process.control",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Restricted FAR participation and relay admission do not specify who can ultimately impose FAR or private bridge upgrades. Public NEAR social consensus, Foundation activity and token governance cannot be assumed to govern this private fork. No private-system authorization hierarchy or ultimate-controller statement was verified."
+  },
+  {
+    "criterionId": "governance.process.public-process",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Canonical public backing-ledger proposals and executions are now observed onchain, including Oct 1-2 Verifier upgrades. Whether private FAR/bridge changes follow that same public process remains unestablished. The whole-system answer stays unknown; the observed public process is disclosed separately."
+  },
+  {
+    "criterionId": "decentralization.censorship.forced-inclusion",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The documented path requires private RPC and bridge processing, but no bounded forced-inclusion mechanism is established for FAR. No such guarantee is inferred from public NEAR inclusion; unavailable deployed node code prevents asserting the absolute absence of all alternatives."
+  },
+  {
+    "criterionId": "decentralization.censorship.observed",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "No dated public dashboard measuring the fraction of FAR blocks censoring transactions was found. Sanctions screening and access controls are not a measured block censorship share."
+  },
+  {
+    "criterionId": "decentralization.censorship.indistinguishable",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "No deployed transaction/enclave topology establishes which private fields FAR producers inspect. Closed networking hides transactions from the public but does not establish indistinguishability to producers."
+  },
+  {
+    "criterionId": "decentralization.settlement.data",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "Apply SCOPE_RULES4 to the selected host FAR itself. Current architecture places the canonical intents.far ledger and settlement on the private NEAR fork; the dated architecture article explicitly describes balances/full history as encrypted onchain. This supports the rubric location option Onchain or L1 DA. The rubric does not add a permissionless/public-RPC requirement. Do not substitute public NEAR backing or infer public reconstruction, guaranteed archival retention, recovery without operators, encryption algorithms or current private image correspondence. These remain unverified and operator-dependent custody is scored separately. The closed-host location interpretation is explicitly recorded for author review."
+  },
+  {
+    "criterionId": "security.soundness.open-critical",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "No complete dated disclosure record for FAR, the private bridge and reference client establishes presence or absence of an unpatched critical issue. Empty public verifier advisories do not prove that the whole system has none."
+  },
+  {
+    "criterionId": "security.soundness.history",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "At least one relevant security incident is established by the official Oct1 NEAR Intents statement: a bug in Omni deposit/withdrawal interaction with the canonical Intents smart contract, with preliminary loss mentioned. The mandatory public backing component and its direct predecessor are in scope; the bug need not break FAR encryption to count. Select One as a supported adverse bound under CONFLICT_RULES, not a claim of an exact complete count. The first-party oEmbed truncates before the amount and repair details; neither the reported secondary $3.8M amount nor a current patch status is asserted."
+  },
+  {
+    "criterionId": "security.maturity.continuity",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "No complete dated record of forced FAR balance/state migrations was found. A state_migrate function and changelog feature updates do not prove that users have or have never been forced to withdraw and redeposit."
+  },
+  {
+    "criterionId": "decentralization.operators.producers",
+    "pass": "round8",
+    "codeChecked": true,
+    "searched": [
+      "Current archived near.com reference-client bundles and applicable first-party source review",
+      "Published controller release0.3.3 and source tag aa13a712; immutable public block219099811",
+      "Full published architectural record and literal rubric; no private credentials or financial actions"
+    ],
+    "note": "The published NEAR page revision updated Aug17 states seven permissioned validators. The applicable product page describes the same dedicated private-shard set as independent. Accept the documented 2–9 configuration as a medium-confidence marketing claim, not an independently verified owner census. Technical architecture establishes only a small permissioned set; independence comes from the product page, not that architecture. Ownership, weights and current private genesis remain unverified; historical Node Monster participation is not a current membership count."
+  },
+  {
+    "criterionId": "custody.pause.exits-during-pause",
+    "pass": "final-review",
+    "codeChecked": true,
+    "searched": [
+      "Matched public16d04f6e source: MIT LICENSE, contract mod.rs, tokens/nep141/withdraw.rs, intents/mod.rs",
+      "Public PauseManager read on immutable block219099811",
+      "Current public CI37662362518 artifact match; private runtime correspondence remains unverified"
+    ],
+    "note": "The matched public Verifier v0.4.5 has pause guards on ft_withdraw and execute_intents. The documented confidential exit requires burn/bridge release of assets from this mandatory public backing component; it has no pause-resistant withdrawal guarantee. This is a proven pauseable core withdrawal path, not an inference from sanctions screening and not a claim that FAR block production has halted. Ordinary screening remains a separate restriction."
+  },
+  {
+    "criterionId": "security.soundness.defense-in-depth",
+    "pass": "final-review",
+    "codeChecked": true,
+    "searched": [
+      "Matched public16d04f6e source: MIT LICENSE, contract mod.rs, tokens/nep141/withdraw.rs, intents/mod.rs",
+      "Public PauseManager read on immutable block219099811",
+      "Current public CI37662362518 artifact match; private runtime correspondence remains unverified"
+    ],
+    "note": "Two distinct documented live protective mechanisms act without a new governance vote: quote-time SHIELD delays for incident/anomaly outcomes in the required route, and the public backing contract guardian PauseManager. The role is live at the immutable Oct8 block and current matched code accepts that role directly; neither requires a fresh council proposal to pause. Select Several. Independence here means distinct protective mechanisms, not independent companies, multiple cryptographic provers or complete protection of every private component. Planned broader SHIELD layers are not counted."
+  },
+  {
+    "criterionId": "security.assurance.open-source",
+    "pass": "final-review",
+    "codeChecked": true,
+    "searched": [
+      "Matched public16d04f6e source: MIT LICENSE, contract mod.rs, tokens/nep141/withdraw.rs, intents/mod.rs",
+      "Public PauseManager read on immutable block219099811",
+      "Current public CI37662362518 artifact match; private runtime correspondence remains unverified"
+    ],
+    "note": "The source of the byte-matched mandatory public Verifier v0.4.5 is published under the MIT license at pinned revision16d04f6e. Exact source correspondence and licensing of the FAR host, private bridge and near.com privacy components remain unestablished. Credit Partial for the confirmed dependency only."
+  },
+  {
+    "criterionId": "security.assurance.reproducibility",
+    "pass": "final-review",
+    "codeChecked": true,
+    "searched": [
+      "Matched public16d04f6e source: MIT LICENSE, contract mod.rs, tokens/nep141/withdraw.rs, intents/mod.rs",
+      "Public PauseManager read on immutable block219099811",
+      "Current public CI37662362518 artifact match; private runtime correspondence remains unverified"
+    ],
+    "note": "The official CI37662362518 for pinned16d04f6e produced a ZIP whose SHA256 matches the GitHub artifact digest; its public defuse.wasm is byte-identical to intents.near v0.4.5 at block219099811. The prior a2dd1408/v0.4.4 match is historical. Build instructions and a FAR variant are public, but no local independent recompilation, deployed FAR byte match or private bridge image match was established. Credit Partial, not whole-stack reproducibility."
+  }
+]

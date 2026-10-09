@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "id": "b682cfb300fd4520ad03ca07edc45203",
+    "rev": "6w3cabrt3qv",
+    "published": "published",
+    "firstPublished": 1748050410711,
+    "lastUpdated": 1786996225510
+  },
+  "figureInlinePath": "data.blocks[4].component.options.rows[2].content",
+  "rawResponseSha256": "a1a18cb8e4e78d5a0b757760d8ccfcf652fd4e80f1fe7738ab48470f829eec4b",
+  "updatedAt": "2026-08-17T19:50:25.510000+00:00",
+  "sourceUrl": "https://cdn.builder.io/api/v3/content/page?apiKey=70130eda95b54795a38fe0f6e694359f&userAttributes.urlPath=%2Fblockchain&limit=1"
+}
